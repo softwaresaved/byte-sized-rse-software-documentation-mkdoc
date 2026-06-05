@@ -6,7 +6,7 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Why are documentation and software (repository) metadata important?
+- Why is documenting software important?
 - How should we document our code?
 - What are the minimum elements of software documentation needed?
 
@@ -14,38 +14,47 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Describe the main types of software documentation and their target audiences.
+- Describe the main types of software documentation and identify their primary audiences, including end users, developers, maintainers, contributors and system administrators.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 This session introduces the importance of documenting our software. 
-We also discuss different types of software documentation and metadata aimed at various target audiences - developers, maintainers, administrators and end users of our software.
+We also discuss different types of software documentation and metadata aimed at various target audiences, including end users, developers, maintainers, administrators and contributors.
 
 ## What is software documentation?
 
-The purpose of software documentation is to communicate important information about our software (its purpose, dependencies, how to install and run it, etc.) to the people who use it.
-It also includes other additional important information and metadata about our software project that are tangential to the usage instructions.
-For example, is it licenced for reuse, who are the developers and maintainers of the project, who to contact about the project, where to report issues or find help, how to cite and credit the software.
+The purpose of software documentation is to communicate important information about our software (its purpose, dependencies, how to install and run it, etc.) to the people who use it. 
+It also includes additional information and metadata about our software project that are important for its reuse and maintenance. 
+For example: is it licensed for reuse, who are the developers and maintainers of the project, who should be contacted about the project, where issues can be reported or help requested, and how the software should be cited and credited.
 
 ## Why does documenting software matter?
 
-Software documentation is often perceived as a thankless and time-consuming task with few tangible benefits and is often neglected in research projects. 
-However, documenting our software helps us improve the software and conduct (more) reproducible research.
-This is because good software documentation:
+Software documentation is often perceived as a thankless and time-consuming task with few tangible benefits and is therefore frequently neglected in research projects. 
+However, documenting our software helps us improve the software itself and conduct more reproducible research. 
+Good software documentation:
 
 - captures important methodological details ready for when we come to publish our research
-- helps us return to a project seamlessly after time away
-- makes our software more understandable and reusable by others, which can bring us citations and credit
+- helps us return to a project more easily after time away
+- makes our software more understandable and reusable by others, increasing its visibility, reuse, and citation
 - facilitates collaboration by helping us onboard new project members quickly
-- saves us time by answering frequently asked questions (FAQs) about our code for us.
+- saves us time by answering frequently asked questions (FAQs) about our code
 
-## Know your target audience
+## Target audiences
 
-Tailoring documentation to the audience’s level of technical understanding ensures it’s relevant and accessible. 
-For example, end-users often benefit from simplified explanations and step-by-step instructions, while developers might need technical specs and code samples.
+Different audiences interact with software in different ways and therefore require different types of documentation. 
+Understanding who your documentation is for helps you decide what information to include, how much detail to provide, and the style in which it should be written.
 
-- Comprehensive user documentation allows users to solve common problems, learn new features, and maximize the software’s value without direct support.
-1. Know your target audience
+* **End users** want to use the software to achieve a goal rather than understand how it is implemented. They need documentation that helps them install, learn, and operate the software efficiently.
+* **Developers** work on the software codebase, adding features, fixing bugs, and improving functionality. They need technical information that helps them understand how the software works and how to contribute code effectively.
+* **Contributors** are people who want to contribute to the project but may not be part of the core development team. They need guidance on project processes, expectations, and ways of working. 
+If they are contributing code, they need to refer to technical documentation for developers as well.
+* **Maintainers** are responsible for the long-term health, quality, and sustainability of the software project. They need documentation that supports software maintenance, releases, governance, and decision-making. 
+They would typically also require technical developer documentation in order to contribute bug fixes.
+* **System administrators** deploy, configure, monitor, and maintain software in operational environments. Their primary concern is ensuring the software runs reliably and securely but may not need to know all the implementation/code details or design decisions.
+
+A single piece of documentation may serve more than one audience. 
+For example, installation guide provides information useful to end users, developers, contributors, maintainers and system administrators. 
+When planning documentation, it is helpful to identify your primary audiences and ensure that each has access to the information needed to successfully use, contribute to, maintain, or operate the software.
 
 ## Types of software documentation
 
@@ -55,74 +64,78 @@ Typically we differentiate between:
 - software-level documentation
 - project-level documentation
 
+Let's look into each of these types.
+
 ## Code-level documentation
 
-There are different forms of code-level documentation, including **comments** and **documentation strings (docstrings)**. 
+Common forms of code-level documentation include **comments** and **documentation strings (docstrings)**.
 
-**Code comments** are free-text explanations of how specific lines of code work (e.g. logic and implementation details) and are ignored by the interpreter/compiler.
+Code comments are free-text explanations of how specific lines of code work (e.g. logic and implementation details) and are ignored by the interpreter or compiler.
 
-**Docstrings** are built-in literal strings placed immediately after the definition of a function, class, module, or method. 
-They explain how to use the code - including its arguments, returns, usage - so other developers and automated tools can understand its usage without reading the implementation.
-Unlike comments, docstrings are retained as part of the running program and there are tools that display docstring information as part of an interactive documentation/help system for your code (as we will see later on).
+Docstrings are built-in literal strings placed immediately after the definition of a function, class, module, or method. 
+They explain how to use the code — including its arguments, return values, and usage — so that other developers and automated tools can understand it without reading the implementation. 
+Unlike comments, docstrings are retained as part of the running program, and many tools can automatically display docstring information as part of an interactive documentation or help system.
 
-Commenting is a very useful practice to help convey the context, logic and usage of the code. 
-It can be helpful as a reminder for your future self or your collaborators as to why code is written in a certain way, how it is achieving a specific task, or the real-world implications of your code.
+Comments help convey the context, rationale, and implementation logic of the code. 
+They can serve as useful reminders about why code was written in a particular way, how it achieves a specific task, or the real-world implications of its behaviour.
+
+Target audience for this type of documentation: developers and maintainers of the software, including your future self.
 
 Here are a few things to keep in mind when commenting your code:
 
-- Focus on the why and the how of your code - avoid using comments to explain what your code does. If your code is too complex for other programmers to understand, consider rewriting it for clarity rather than adding comments to explain it.
-- Make sure you are not reiterating something that your code already conveys on its own. Comments should not echo your code.
-- Keep comments short and concise. Large blocks of text quickly become unreadable and difficult to maintain.
-- Comments that contradict the code are worse than no comments. Always make a priority of keeping comments up-to-date when code changes.
+* Focus on the why and the how of your code rather than what it does. If your code is too complex to understand, consider rewriting it for clarity instead of relying on comments.
+* Avoid repeating information that is already obvious from the code itself.
+* Keep comments short and concise. Large blocks of text quickly become difficult to read and maintain.
+* Comments that contradict the code are worse than no comments at all. Keep comments up to date whenever code changes.
 
 ## Software-level documentation
 
-Comments and documentation strings are an excellent way to improve the documentation and readability of our code, but by themselves are insufficient to ensure that our code is easy to use, understand and modify.
-This requires additional technical documentation content and style of which should match its intended purpose and audience.
+Comments and docstrings are excellent ways to improve the readability and maintainability of code, but by themselves they are insufficient to ensure that software is easy to use, understand, and modify. 
+This requires additional software-level documentation whose content and style should match its intended purpose and audience, for example:
 
-[Diátaxis framework][diataxis-framework] (shown in diagram below) provides a systematic approach to technical documentation authoring.
-It prescribes approaches to content and form that emerge from a systematic approach to understanding the needs of documentation users.
+- **Technical documentation** for developers and administrators - including the information necessary to develop, deploy, and maintain software.
+  For example, high-level architecture and low-level processes such as configurations, error codes, troubleshooting steps, and setup guides; API documentation; testing documentation.
+- **User documentation** for end-users including installation guides, user manuals, and step-by-step instructions and example usages to help users understand, learn new features and use the software effectively; 
+  FAQs and troubleshooting guides to solve common problems without direct support.
+
+[Diátaxis framework][diataxis-framework] (shown in the diagram below) provides a systematic approach to technical documentation. 
+It prescribes documentation types based on the needs of documentation users and the purpose the documentation serves.
 
 ![](https://diataxis.fr/_images/diataxis.png)
 
-According to Diátaxis, technical documentation types (based on their purpose and style) are classified into:
+According to Diátaxis, technical documentation can be classified into four categories:
 
-- Tutorials - lessons that guide learners through a series of exercises to build proficiency using the code 
-- How-to guides - step by step instructions on how to accomplish specific goals using the code
-- References - lookup manuals to help users find relevant information about the software, e.g. functions and their parameters - which can be generated automatically from code-level docstrings
-- Explanations - conceptual discussions of the code to help users understand implementation decisions.
+- Tutorials - lessons that guide learners through a series of exercises to build proficiency using the code. Target audience: new users and learners who are unfamiliar with the software.
+- How-to guides - step by step instructions on how to accomplish specific goals using the software. Target audience: existing users who want to complete a particular task.
+- Reference documentation - lookup material that helps users find precise information about the software, such as functions, commands, parameters, APIs, and configuration options. 
+Reference documentation can often be generated automatically from code-level docstrings. Target audience: developers, advanced users, and maintainers who need accurate technical details.
+- Explanations - conceptual discussions that help users understand implementation decisions, design choices, and underlying principles. 
+Target audience: developers, maintainers, and contributors who need to understand the reasoning behind the software.
 
-Other guides on writing documentation, such as [Write the Docs][write-the-docs] and [The Good Docs Project][the-good-docs-project] provide a range of resources including documentation templates to help us write quality documentation.
+Other guides on writing documentation, such as [Write the Docs][write-the-docs] and [The Good Docs Project][the-good-docs-project], provide a wide range of resources and templates to help teams produce high-quality documentation.
 
-You do not have to have all of the above documentation types but you should aim to have at least some documentation for each of your intended audiences:
-
-- Technical documentation for developers and administrators - including the information necessary to develop, deploy, and maintain software. 
-For example, high-level architecture and low-level processes such as configurations, error codes, troubleshooting steps, and setup guides; API documentation; testing documentation.
-- User documentation for end-users including installation guides, user manuals, and step-by-step instructions and example usages to help users understand, learn new feature sand use the software effectively; FAQs and troubleshooting guides to solve common problems without direct support.
+You do not need to provide all of the above documentation types, but you should aim to have documentation that serves each of your intended audiences.
 
 ## Project-level documentation
 
-Project-level documentation includes various information and metadata about software that help to discover it, explain the legal terms of reusing it, describe its functionality and purpose on a high level and provide pointers to other types of documentation for your software.
+Project-level documentation includes information and metadata that help others discover, understand, evaluate, cite, reuse, and contribute to software.
 
-A common way to provide project-level documentation is to include various metadata files in the software repository together with code.
-Some common examples of repository metadata files and their role are explained in the table below.
+Target audience: end users, developers, contributors, project managers, funders, and anyone evaluating or reusing the software.
 
-| File            | Description                                                                                                                                                                                                                                                                                                                                                   |
-|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| README          | Provides an overview of the project. It can either include inline information or pointers to separate installation instructions and dependencies, usage instructions for running the code or example use cases, links to other metadata files (LICENSE, CITATION, CONTRIBUTING, AUTHORS, etc.) and technical documentation (tutorials / how-tos / references) |
-| CONTRIBUTING    | Explains to developers how to contribute code to the project including processes and standards that should be followed                                                                                                                                                                                                                                        |
-| CODE_OF_CONDUCT | Defines expected standards of conduct when engaging in a software project                                                                                                                                                                                                                                                                                     |
-| LICENSE         | Defines the (legal) terms of using, modifying and distributing the software                                                                                                                                                                                                                                                                                   |
-| CITATION        | Provides instructions on how to cite the software                                                                                                                                                                                                                                                                                                             |
-| AUTHORS         | Provides information on who authored the software (can also be included in CITATION.cff in which case this file is not needed)                                                                                                                                                                                                                                |
+A common way to provide project-level documentation is to include metadata files within the software repository alongside the code. 
+Some common examples are shown below.
 
+| File            | Description                                                                                                                                  |
+|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| `README`          | Provides an overview of the project, including links to installation, usage, dependencies, other metadata files and technical documentation. |
+| `CONTRIBUTING`    | Contributor onboarding - explains how to contribute to the project, follow project processes and standards, and use common tools.            |
+| `CODE_OF_CONDUCT` | Defines expected standards of behaviour within the project community.                                                                        |
+| `LICENSE`         | Defines the legal terms under which the software can be used, modified, and distributed.                                                     |
+| `CITATION`        | Provides instructions on how to cite the software.                                                                                           |
+| `AUTHORS`         | Identifies the authors of the software (often included within a `CITATION.cff` file instead).                                                |
+| Release notes | Summaries detailing new features, updates, fixes, and known issues in the latest software release.                                           | 
 
-Many of these files can be described as "social documentation", i.e. they indicate how users should “behave” in relation to or "interact" with our software project.
-Additional documentation may include:
-
-- Developer onboarding - helps new team members quickly get up to speed with a project, including key development practices and tools in use to establishes a standardised knowledge foundation across team members.
-- Contributor guide - similar to developer onboarding but includes a wide range of external contributors for open projects (and not just technical contributors/internal team members working on software development)
-- Release notes - summaries for users detailing new features, updates, fixes, and known issues in the latest software release.
+Many of these files can be considered *social documentation* because they describe how people should interact with a software project and its community.
 
 
 ::: callout
@@ -134,19 +147,17 @@ For many small projects the following three pieces of project-level documentatio
 Let’s look at each of these files in turn.
 
 ### README file
-A README file acts as a “landing page” for your code repository on GitHub and should provide sufficient information for users to and developers to get started using your code.
+A README file acts as the landing page for your repository and should provide enough information for users and developers to get started with your software.
 
-To support the [FAIR principles (Findability, Accessibility, Interoperability, and Reusability)][fair-principles-research-software], certain sections in a README file are more important than others.
-Below is a breakdown of the sections that are *essential* or *optional* in a README to align with these principles.
+To support the [FAIR principles (Findability, Accessibility, Interoperability, and Reusability)][fair-principles-research-software], certain README sections are particularly important.
 
 Essential:
 
-- **Purpose of the code** - clearly explains what the code does; essential for findability and reusability.
-- **Installation instructions** - step-by-step instructions on how to install the software, ensuring accessibility (either in-line instructions or a pointer to a separate installation guide). 
-This may include **dependencies** - an overview of external libraries and tools required to run the code, essential for reproducibility and interoperability.
+- **Purpose of the software** - clearly explains what the code does; essential for findability and reusability.
+- **Installation instructions** - describes how to install and configure the software and its dependencies, essential for reproducibility and interoperability.
 - **Usage examples** - examples of how to run and use the code, helping users understand its functionality and enhancing reusability.
-- **License** - specifies the terms under which the code can be used, which is crucial for legal clarity and reusability (typically a pointer to LICENSE file).
-- **Software citation** - provides citation information for academic use, ensuring proper attribution and reusability (typically a pointer to CITATION file).
+- **License information** - links to the LICENSE file and clarifies reuse permissions, crucial for legal clarity and reusability.
+- **Citation information** - links to the CITATION file and explains how the software should be cited, ensuring proper attribution and reusability.
 
 Optional:
 
@@ -158,36 +169,41 @@ Optional:
 
 ### LICENSE file
 
-Copyright allows a creator of work (such as written text, photographs, films, music, software code) to state that they own the work they have created.
-Copyright is automatically implied - even if the creator does not explicitly assert it, copyright of the work exists from the moment of creation.
-A licence is a legal document which sets down the terms under which the creator is releasing what they have created for others to use, modify, extend or exploit.
+Copyright automatically applies to creative works —including software— from the moment they are created. 
+A licence is a legal document that specifies the terms under which others may use, modify, redistribute, or build upon that work.
 
-Because any creative work is copyrighted the moment it is created, even without any kind of licence agreement, it is important to state the terms under which software can be reused.
-The lack of a licence for your software implies that no one can reuse the software at all - hence it is imperative you declare it.
-A common way to declare your copyright of a piece of software and the license you are distributing it under is to include a file called LICENSE in the root directory of your code repository.
+Because software is copyrighted by default, it is important to explicitly state the terms under which it can be reused. 
+Without a licence, others generally have no permission to reuse the software.
 
-Here are some tools to help you choose a licence:
+The standard way to declare licensing terms is to include a file called `LICENSE` in the root directory of the repository.
 
-- [The open source guide][opensource-licence-guide] on applying, changing and editing licenses.
-- [choosealicense.com][choosealicense] online tool has some great resources to help you choose a license that is appropriate for your needs, and can even automate adding the LICENSE file to your GitHub code repository.
+Useful resources include:
+
+- [The open source guide][opensource-licence-guide] on applying, changing and managing licenses.
+- [choosealicense.com][choosealicense] online tool which helps developers select an appropriate licence and generate a LICENSE file.
 
 ### CITATION file
 
-We should add a citation file to our repository to provide instructions on how to cite our code.
-A citation file can be a plain text (CITATION.txt) or a Markdown file (CITATION.md), but there are certain benefits to using use a special file format called the [Citation File Format (CFF)][cff].
-This format provides a way to include richer metadata about code (or datasets) we want to cite, making it easy for both humans and machines to use this information.
+A citation file provides instructions on how users should cite your software. 
+Citation information can be provided in plain text (`CITATION.txt`) or Markdown (`CITATION.md`), but there are significant benefits to using the Citation File Format (CFF) in `CITATION.cff`.
+
+CFF provides structured, machine-readable metadata that can be understood by repositories, citation services, and reference-management tools.
 
 #### Why use CFF?
 
-For developers, using a CFF file can help to automate the process of publishing new releases on [Zenodo][zenodo] via GitHub.
-GitHub also "understands" CFF, and will display citation information prominently on the landing page of a repository that contains citation info in CFF.
+For developers, using a CFF file can help to automate the process of publishing new releases on [Zenodo][zenodo] via GitHub. 
+GitHub also “understands” CFF, and will display citation information prominently on the landing page of a repository that contains citation info in CFF.
 
-For users, having a CFF file makes it easy to cite the software or dataset with formatted citation information available for copy+paste and direct import from GitHub into reference managers like Zotero.
+For users, having a `CITATION.cff` file makes it easy to cite the software or dataset with formatted citation information available for copy+paste and direct import from GitHub into reference managers like [Zotero][zotero].
 
-#### CFF file format
+CFF uses the [YAML](https://yaml.org/) key-value pair format.
+At a minimum, it must contain:
 
-A CFF file is using the [YAML](https://yaml.org/) key-value pair format.
-At a minimum a CFF file must contain the title of the software/data, the type of asset (software or data) and at least one author:
+- the title of the software
+- the asset type (e.g. software or dataset)
+- at least one author
+
+Example:
 
 ```yaml
 # This CITATION.cff file was generated with cffinit.
@@ -203,17 +219,15 @@ authors:
     family-names: Researcher
 ```
 
-Additional and optional metadata includes an abstract, repository URL and more.
+Additional metadata can include abstracts, repository URLs, version information, identifiers (DOIs), and more.
 
-#### Creating CFF file and making your software citable
+A CFF file can be created or updated using the online application [`cffinit`][cffinit-webapp].
 
-We can create (and later update) a CFF file for our software using an online application called [`cffinit`][cffinit-webapp].
+Once `CITATION.cff` file has been added to a repository, GitHub's "Cite this repository" feature can generate citations in a variety of formats, including APA and BibTeX.
 
-#### Citing
+## Summary
 
-To cite our software (or dataset), once a CFF file has been pushed to our remote repository, GitHub's "Cite this repository" button can be used to generate a citation in various formats (APA, BibTeX).
-
-
----
-How-to guides and tutorials ensure that users can install our software independently and make use of its basic features.
-Reference guides and background information can help developers understand our code sufficiently to modify/extend/repurpose it.
+Software documentation helps make research software understandable, reusable, maintainable, and citable. 
+Different forms of documentation serve different audiences. 
+Code-level documentation supports developers and maintainers, user documentation helps people learn and use software, and project-level documentation provides essential information about the software and its community. 
+Even small projects benefit from maintaining a README, LICENSE, and CITATION file, which together improve the discoverability, usability, and reusability of software.
