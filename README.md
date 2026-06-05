@@ -20,3 +20,8 @@ TODO.
 ### Recordings
 
 TODO.
+
+
+## Acknowledgements
+
+This Byte-sized session was based on the "Software documentation" episode of ["Building better research software"][] course, written by Kamilla Kopec-Harding.
