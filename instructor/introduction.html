@@ -210,8 +210,8 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#what-is-software-documentation">What is software documentation?</a></li>
+<li><a href="#who-is-documentation-for">Who is documentation for?</a></li>
 <li><a href="#why-does-documenting-software-matter">Why does documenting software matter?</a></li>
-<li><a href="#target-audiences">Target audiences</a></li>
 <li><a href="#types-of-software-documentation">Types of software documentation</a></li>
 <li><a href="#code-level-documentation">Code-level documentation</a></li>
 <li><a href="#software-level-documentation">Software-level documentation</a></li>
@@ -235,16 +235,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="analysing-code.html">Analysing Code using a Linter</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush5">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading5">
-        <a href="linter-advanced.html">Advanced Linting Features</a>
+        <a href="generating-documentation-mkdocs.html">Generating documentation with MkDocs</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -308,13 +299,13 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction</h1>
-        <p>Last updated on 2026-06-05 |
+        <p>Last updated on 2026-06-08 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-software-documentation-mkdocs/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
 
 
-        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
+        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 30 minutes</p>
 
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -348,78 +339,108 @@ contributors and system administrators.</li>
 </div>
 </div>
 <p>This session introduces the importance of documenting our software.
-We also discuss different types of software documentation and metadata
-aimed at various target audiences, including end users, developers,
-maintainers, administrators and contributors.</p>
+We also discuss different types of software documentation aimed at
+various target audiences, including end users, developers, maintainers,
+administrators and contributors.</p>
 <section><h2 class="section-heading" id="what-is-software-documentation">What is software documentation?<a class="anchor" aria-label="anchor" href="#what-is-software-documentation"></a></h2>
-<hr class="half-width"><p>The purpose of software documentation is to communicate important
-information about our software (its purpose, dependencies, how to
-install and run it, etc.) to the people who use it. It also includes
-additional information and metadata about our software project that are
-important for its reuse and maintenance. For example: is it licensed for
-reuse, who are the developers and maintainers of the project, who should
-be contacted about the project, where issues can be reported or help
-requested, and how the software should be cited and credited.</p>
-</section><section><h2 class="section-heading" id="why-does-documenting-software-matter">Why does documenting software matter?<a class="anchor" aria-label="anchor" href="#why-does-documenting-software-matter"></a></h2>
-<hr class="half-width"><p>Software documentation is often perceived as a thankless and
-time-consuming task with few tangible benefits and is therefore
-frequently neglected in research projects. However, documenting our
-software helps us improve the software itself and conduct more
-reproducible research. Good software documentation:</p>
-<ul><li>captures important methodological details ready for when we come to
-publish our research</li>
-<li>helps us return to a project more easily after time away</li>
-<li>makes our software more understandable and reusable by others,
-increasing its visibility, reuse, and citation</li>
-<li>facilitates collaboration by helping us onboard new project members
-quickly</li>
-<li>saves us time by answering frequently asked questions (FAQs) about
-our code</li>
-</ul></section><section><h2 class="section-heading" id="target-audiences">Target audiences<a class="anchor" aria-label="anchor" href="#target-audiences"></a></h2>
-<hr class="half-width"><p>Different audiences interact with software in different ways and
+<hr class="half-width"><p>Software documentation provides the information needed to understand,
+use, maintain and reuse software. It explains the software’s purpose,
+functionality, installation, configuration and operation - helping users
+and contributors work with the software effectively.</p>
+<p>Documentation also captures important software project information
+and metadata that support long-term sustainability and reuse. This may
+include details about licensing, project ownership and maintenance,
+contributor roles, contact information, support channels, issue
+reporting processes and guidance on how the software should be cited and
+credited. Together, this information helps ensure that software remains
+accessible, reusable and maintainable throughout its lifecycle.</p>
+</section><section><h2 class="section-heading" id="who-is-documentation-for">Who is documentation for?<a class="anchor" aria-label="anchor" href="#who-is-documentation-for"></a></h2>
+<hr class="half-width"><p>Different audiences interact with our software in different ways and
 therefore require different types of documentation. Understanding who
 your documentation is for helps you decide what information to include,
 how much detail to provide, and the style in which it should be
 written.</p>
+<p>Common audiences for software documentation include:</p>
 <ul><li>
 <strong>End users</strong> want to use the software to achieve a
 goal rather than understand how it is implemented. They need
 documentation that helps them install, learn, and operate the software
 efficiently.</li>
 <li>
-<strong>Developers</strong> work on the software codebase, adding
-features, fixing bugs, and improving functionality. They need technical
-information that helps them understand how the software works and how to
-contribute code effectively.</li>
+<strong>Developers</strong> work on the software’s codebase to add
+features, fix bugs and improve functionality. They need technical
+information that helps them understand how the software works (covering
+software architecture, code structure, APIs, testing procedures) and
+information on development workflows/practices so they can contribute
+code effectively.</li>
 <li>
-<strong>Contributors</strong> are people who want to contribute to
-the project but may not be part of the core development team. They need
-guidance on project processes, expectations, and ways of working. If
-they are contributing code, they need to refer to technical
-documentation for developers as well.</li>
+<strong>Contributors</strong> contribute to the project but may not
+be part of the core development team. They need guidance on contribution
+processes, project expectations, coding standards and community
+practices. Code contributors will also need access to developer
+documentation.</li>
 <li>
 <strong>Maintainers</strong> are responsible for the long-term
-health, quality, and sustainability of the software project. They need
-documentation that supports software maintenance, releases, governance,
-and decision-making. They would typically also require technical
-developer documentation in order to contribute bug fixes.</li>
+health and sustainability of the software project. They need
+documentaiton covering releases, governance, maintenance procedures,
+project management, and decision-making processes, as well as technical
+developer documentation.</li>
 <li>
-<strong>System administrators</strong> deploy, configure, monitor,
-and maintain software in operational environments. Their primary concern
-is ensuring the software runs reliably and securely but may not need to
-know all the implementation/code details or design decisions.</li>
-</ul><p>A single piece of documentation may serve more than one audience. For
-example, installation guide provides information useful to end users,
-developers, contributors, maintainers and system administrators. When
-planning documentation, it is helpful to identify your primary audiences
-and ensure that each has access to the information needed to
-successfully use, contribute to, maintain, or operate the software.</p>
+<strong>System administrators</strong> deploy, configure, monitor
+and maintain software in operational environments. They need
+documentation on installation, configuration, deployment, system
+requirements, security, monitoring, backup and troubleshooting (but may
+not need to know all the implementation/code details or design
+decisions).</li>
+</ul><p>You may not have all of these audiences for your software, but you
+will almost certainly have end users and developers. A single document
+may serve multiple audiences, so information does not necessarily need
+to be duplicated. For example, installation documentation can be useful
+to end users, developers, contributors, maintainers and system
+administrators alike.</p>
+<p>When planning documentation, identify your primary audiences and
+ensure that each has access to the information they need to successfully
+use, contribute to, maintain or operate the software.</p>
+</section><section><h2 class="section-heading" id="why-does-documenting-software-matter">Why does documenting software matter?<a class="anchor" aria-label="anchor" href="#why-does-documenting-software-matter"></a></h2>
+<hr class="half-width"><p>Software documentation is often seen as a time-consuming task with
+few immediate rewards and is therefore frequently neglected in research
+projects. However, documentation is an essential part of software
+development and research practice. Good documentation not only helps
+others understand and use software, but also improves the quality,
+sustainability and reproducibility of the research it supports.</p>
+<p>Good software documentation:</p>
+<ul><li>captures important methodological details that can be referenced
+when publishing research findings or preparing reports and papers.</li>
+<li>helps you revisit a project more easily after weeks, months, or even
+years away from it.</li>
+<li>makes software easier to understand, reuse and build upon,
+increasing its visibility, adoption, and potential impact.</li>
+<li>supports reproducible research by providing clear information about
+how the software works and how it should be used.</li>
+<li>facilitates collaboration by helping new team members quickly
+understand the project and become productive.</li>
+<li>reduces support requests and saves time by answering common
+questions and providing guidance for users.</li>
+<li>improves software sustainability by making it easier to maintain,
+update, and transfer knowledge between project members.</li>
+</ul><p>In short, documentation is an investment that benefits both current
+and future users, contributors and maintainers of a software
+project.</p>
 </section><section><h2 class="section-heading" id="types-of-software-documentation">Types of software documentation<a class="anchor" aria-label="anchor" href="#types-of-software-documentation"></a></h2>
-<hr class="half-width"><p>Typically we differentiate between:</p>
-<ul><li>code-level documentation</li>
-<li>software-level documentation</li>
-<li>project-level documentation</li>
-</ul><p>Let’s look into each of these types.</p>
+<hr class="half-width"><p>Software documentation can be produced at different levels and for
+different audiences. A useful way to think about documentation is to
+group it into three broad categories:</p>
+<ul><li>Code-level documentation – information embedded within the source
+code that helps developers understand how the code works.</li>
+<li>Software-level documentation – documentation that explains how to
+install, use, configure and contribute to the software.</li>
+<li>Project-level documentation – documentation that describes the wider
+software project, including its governance, maintenance, licensing,
+support and sustainability.</li>
+</ul><p>These categories complement one another and together provide the
+information needed to develop, use, maintain, and reuse software
+effectively. In the following sections, we will explore each type in
+more detail.</p>
 </section><section><h2 class="section-heading" id="code-level-documentation">Code-level documentation<a class="anchor" aria-label="anchor" href="#code-level-documentation"></a></h2>
 <hr class="half-width"><p>Common forms of code-level documentation include
 <strong>comments</strong> and <strong>documentation strings
@@ -673,10 +694,22 @@ and maintainers, user documentation helps people learn and use software,
 and project-level documentation provides essential information about the
 software and its community. Even small projects benefit from maintaining
 a README, LICENSE, and CITATION file, which together improve the
-discoverability, usability, and reusability of software. <!--
+discoverability, usability, and reusability of software.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>TODO</p>
+</div>
+</div>
+</div>
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></p>
+ -->
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter Bottom"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
@@ -737,8 +770,8 @@ any links that you are not going to use.
   "url": "https://carpentries-incubator.github.io/byte-sized-rse-software-documentation-mkdocs/instructor/introduction.html",
   "identifier": "https://carpentries-incubator.github.io/byte-sized-rse-software-documentation-mkdocs/instructor/introduction.html",
   "dateCreated": "2026-04-21",
-  "dateModified": "2026-06-05",
-  "datePublished": "2026-06-05"
+  "dateModified": "2026-06-08",
+  "datePublished": "2026-06-08"
 }
 
   </script><script>
