@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-teaching: 15
+teaching: 30
 exercises: 0
 ---
 
@@ -19,52 +19,68 @@ exercises: 0
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 This session introduces the importance of documenting our software. 
-We also discuss different types of software documentation and metadata aimed at various target audiences, including end users, developers, maintainers, administrators and contributors.
+We also discuss different types of software documentation aimed at various target audiences, including end users, developers, maintainers, administrators and contributors.
 
 ## What is software documentation?
 
-The purpose of software documentation is to communicate important information about our software (its purpose, dependencies, how to install and run it, etc.) to the people who use it. 
-It also includes additional information and metadata about our software project that are important for its reuse and maintenance. 
-For example: is it licensed for reuse, who are the developers and maintainers of the project, who should be contacted about the project, where issues can be reported or help requested, and how the software should be cited and credited.
+Software documentation provides the information needed to understand, use, maintain and reuse software. 
+It explains the software's purpose, functionality, installation, configuration and operation - helping users and contributors work with the software effectively.
+
+Documentation also captures important software project information and metadata that support long-term sustainability and reuse. 
+This may include details about licensing, project ownership and maintenance, contributor roles, contact information, support channels, issue reporting processes and guidance on how the software should be cited and credited. 
+Together, this information helps ensure that software remains accessible, reusable and maintainable throughout its lifecycle.
+
+## Who is documentation for?
+
+Different audiences interact with our software in different ways and therefore require different types of documentation.
+Understanding who your documentation is for helps you decide what information to include, how much detail to provide, and the style in which it should be written.
+
+Common audiences for software documentation include:
+
+* **End users** want to use the software to achieve a goal rather than understand how it is implemented. They need documentation that helps them install, learn, and operate the software efficiently.
+* **Developers** work on the software's codebase to add features, fix bugs and improve functionality. They need technical information that helps them understand how the software works (covering software architecture, code structure, APIs, testing procedures) and information on development workflows/practices so they can contribute code effectively.
+* **Contributors** contribute to the project but may not be part of the core development team. They need guidance on contribution processes, project expectations, coding standards and community practices. 
+  Code contributors will also need access to developer documentation.
+* **Maintainers** are responsible for the long-term health and sustainability of the software project.
+  They need documentaiton covering releases, governance, maintenance procedures, project management, and decision-making processes, as well as technical developer documentation. 
+* **System administrators** deploy, configure, monitor and maintain software in operational environments. 
+  They need documentation on installation, configuration, deployment, system requirements, security, monitoring, backup and troubleshooting (but may not need to know all the implementation/code details or design decisions).
+
+You may not have all of these audiences for your software, but you will almost certainly have end users and developers. 
+A single document may serve multiple audiences, so information does not necessarily need to be duplicated. 
+For example, installation documentation can be useful to end users, developers, contributors, maintainers and system administrators alike.
+
+When planning documentation, identify your primary audiences and ensure that each has access to the information they need to successfully use, contribute to, maintain or operate the software.
 
 ## Why does documenting software matter?
 
-Software documentation is often perceived as a thankless and time-consuming task with few tangible benefits and is therefore frequently neglected in research projects. 
-However, documenting our software helps us improve the software itself and conduct more reproducible research. 
+Software documentation is often seen as a time-consuming task with few immediate rewards and is therefore frequently neglected in research projects. 
+However, documentation is an essential part of software development and research practice. 
+Good documentation not only helps others understand and use software, but also improves the quality, sustainability and reproducibility of the research it supports.
+
 Good software documentation:
 
-- captures important methodological details ready for when we come to publish our research
-- helps us return to a project more easily after time away
-- makes our software more understandable and reusable by others, increasing its visibility, reuse, and citation
-- facilitates collaboration by helping us onboard new project members quickly
-- saves us time by answering frequently asked questions (FAQs) about our code
+- captures important methodological details that can be referenced when publishing research findings or preparing reports and papers.
+- helps you revisit a project more easily after weeks, months, or even years away from it.
+- makes software easier to understand, reuse and build upon, increasing its visibility, adoption, and potential impact.
+- supports reproducible research by providing clear information about how the software works and how it should be used.
+- facilitates collaboration by helping new team members quickly understand the project and become productive.
+- reduces support requests and saves time by answering common questions and providing guidance for users.
+- improves software sustainability by making it easier to maintain, update, and transfer knowledge between project members.
 
-## Target audiences
-
-Different audiences interact with software in different ways and therefore require different types of documentation. 
-Understanding who your documentation is for helps you decide what information to include, how much detail to provide, and the style in which it should be written.
-
-* **End users** want to use the software to achieve a goal rather than understand how it is implemented. They need documentation that helps them install, learn, and operate the software efficiently.
-* **Developers** work on the software codebase, adding features, fixing bugs, and improving functionality. They need technical information that helps them understand how the software works and how to contribute code effectively.
-* **Contributors** are people who want to contribute to the project but may not be part of the core development team. They need guidance on project processes, expectations, and ways of working. 
-If they are contributing code, they need to refer to technical documentation for developers as well.
-* **Maintainers** are responsible for the long-term health, quality, and sustainability of the software project. They need documentation that supports software maintenance, releases, governance, and decision-making. 
-They would typically also require technical developer documentation in order to contribute bug fixes.
-* **System administrators** deploy, configure, monitor, and maintain software in operational environments. Their primary concern is ensuring the software runs reliably and securely but may not need to know all the implementation/code details or design decisions.
-
-A single piece of documentation may serve more than one audience. 
-For example, installation guide provides information useful to end users, developers, contributors, maintainers and system administrators. 
-When planning documentation, it is helpful to identify your primary audiences and ensure that each has access to the information needed to successfully use, contribute to, maintain, or operate the software.
+In short, documentation is an investment that benefits both current and future users, contributors and maintainers of a software project.
 
 ## Types of software documentation
 
-Typically we differentiate between:
+Software documentation can be produced at different levels and for different audiences. 
+A useful way to think about documentation is to group it into three broad categories:
 
-- code-level documentation
-- software-level documentation
-- project-level documentation
+- Code-level documentation – information embedded within the source code that helps developers understand how the code works.
+- Software-level documentation – documentation that explains how to install, use, configure and contribute to the software.
+- Project-level documentation – documentation that describes the wider software project, including its governance, maintenance, licensing, support and sustainability.
 
-Let's look into each of these types.
+These categories complement one another and together provide the information needed to develop, use, maintain, and reuse software effectively. 
+In the following sections, we will explore each type in more detail.
 
 ## Code-level documentation
 
@@ -231,3 +247,9 @@ Software documentation helps make research software understandable, reusable, ma
 Different forms of documentation serve different audiences. 
 Code-level documentation supports developers and maintainers, user documentation helps people learn and use software, and project-level documentation provides essential information about the software and its community. 
 Even small projects benefit from maintaining a README, LICENSE, and CITATION file, which together improve the discoverability, usability, and reusability of software.
+
+
+::: keypoints
+
+TODO
+:::
