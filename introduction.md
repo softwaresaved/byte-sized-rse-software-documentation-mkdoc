@@ -42,7 +42,7 @@ Common audiences for software documentation include:
 * **Contributors** contribute to the project but may not be part of the core development team. They need guidance on contribution processes, project expectations, coding standards and community practices. 
   Code contributors will also need access to developer documentation.
 * **Maintainers** are responsible for the long-term health and sustainability of the software project.
-  They need documentaiton covering releases, governance, maintenance procedures, project management, and decision-making processes, as well as technical developer documentation. 
+  They need documentation covering releases, governance, maintenance procedures, project management, and decision-making processes, as well as technical developer documentation. 
 * **System administrators** deploy, configure, monitor and maintain software in operational environments. 
   They need documentation on installation, configuration, deployment, system requirements, security, monitoring, backup and troubleshooting (but may not need to know all the implementation/code details or design decisions).
 
@@ -75,9 +75,9 @@ In short, documentation is an investment that benefits both current and future u
 Software documentation can be produced at different levels and for different audiences. 
 A useful way to think about documentation is to group it into three broad categories:
 
-- Code-level documentation – information embedded within the source code that helps developers understand how the code works.
-- Software-level documentation – documentation that explains how to install, use, configure and contribute to the software.
-- Project-level documentation – documentation that describes the wider software project, including its governance, maintenance, licensing, support and sustainability.
+- **Code-level documentation** – information embedded within the source code that explains how the code works.
+- **Software-level documentation** – documentation that explains how to install, use, configure and contribute to the code.
+- **Project-level documentation** – documentation that describes the wider software project, including its governance, maintenance, licensing, support and sustainability.
 
 These categories complement one another and together provide the information needed to develop, use, maintain, and reuse software effectively. 
 In the following sections, we will explore each type in more detail.
@@ -88,49 +88,53 @@ Common forms of code-level documentation include **comments** and **documentatio
 
 Code comments are free-text explanations of how specific lines of code work (e.g. logic and implementation details) and are ignored by the interpreter or compiler.
 
-Docstrings are built-in literal strings placed immediately after the definition of a function, class, module, or method. 
+Docstrings are built-in literal strings placed immediately after the definition of a function, class, module, or method that follow a certain syntax. 
 They explain how to use the code — including its arguments, return values, and usage — so that other developers and automated tools can understand it without reading the implementation. 
-Unlike comments, docstrings are retained as part of the running program, and many tools can automatically display docstring information as part of an interactive documentation or help system.
+Unlike comments, docstrings are retained as part of the running program, and many tools can automatically display docstring information as part of an interactive documentation or help system (as we will see later on in this lesson).
 
 Comments help convey the context, rationale, and implementation logic of the code. 
-They can serve as useful reminders about why code was written in a particular way, how it achieves a specific task, or the real-world implications of its behaviour.
+They can serve as useful reminders about why code was written in a particular way, how it achieves a specific task or the real-world implications of its behaviour.
 
 Target audience for this type of documentation: developers and maintainers of the software, including your future self.
 
-Here are a few things to keep in mind when commenting your code:
+When writing comments, keep the following principles in mind:
 
-* Focus on the why and the how of your code rather than what it does. If your code is too complex to understand, consider rewriting it for clarity instead of relying on comments.
-* Avoid repeating information that is already obvious from the code itself.
-* Keep comments short and concise. Large blocks of text quickly become difficult to read and maintain.
-* Comments that contradict the code are worse than no comments at all. Keep comments up to date whenever code changes.
+* Focus on why the code exists and how it works, rather than simply describing what it does.
+* Avoid comments that merely repeat information that is already obvious from the code.
+* Prefer clear, readable code over excessive commenting. If a section of code is difficult to understand, consider refactoring it before adding explanatory comments.
+* Keep comments concise and focused. Large blocks of text are difficult to read and maintain.
+* Update comments whenever the code changes. Outdated or misleading comments can be more harmful than having no comments at all.
+* Use comments to record important assumptions, limitations or workarounds that may not be apparent from the code itself.
 
 ## Software-level documentation
 
-Comments and docstrings are excellent ways to improve the readability and maintainability of code, but by themselves they are insufficient to ensure that software is easy to use, understand, and modify. 
-This requires additional software-level documentation whose content and style should match its intended purpose and audience, for example:
+Comments and docstrings improve the readability and maintainability of source code, but they are not sufficient on their own to make software easy to use, understand, deploy or contribute to. 
+This requires additional software-level documentation aimed at different audiences and their specific needs.
 
-- **Technical documentation** for developers and administrators - including the information necessary to develop, deploy, and maintain software.
-  For example, high-level architecture and low-level processes such as configurations, error codes, troubleshooting steps, and setup guides; API documentation; testing documentation.
-- **User documentation** for end-users including installation guides, user manuals, and step-by-step instructions and example usages to help users understand, learn new features and use the software effectively; 
-  FAQs and troubleshooting guides to solve common problems without direct support.
+Common examples of software-level documentation include:
 
-[Diátaxis framework][diataxis-framework] (shown in the diagram below) provides a systematic approach to technical documentation. 
-It prescribes documentation types based on the needs of documentation users and the purpose the documentation serves.
+- **Technical documentation** for developers, maintainers, contributors and system administrators including high-level software architecture descriptions, API documentation, setup and deployment guides, configuration instructions, testing procedures, error codes and troubleshooting information.
+- **User documentation** for end users including installation guides, tutorials, user manuals, example workflows, FAQs and troubleshooting guides that help users learn and use the software effectively without requiring direct support from the development team.
+
+A useful framework for organising software documentation is [Diátaxis][diataxis-framework] (shown in the diagram below), which categorises documentation according to the needs of the reader and the purpose the documentation serves. 
 
 ![](https://diataxis.fr/_images/diataxis.png)
 
-According to Diátaxis, technical documentation can be classified into four categories:
+Diátaxis identifies four complementary types of documentation:
 
-- Tutorials - lessons that guide learners through a series of exercises to build proficiency using the code. Target audience: new users and learners who are unfamiliar with the software.
-- How-to guides - step by step instructions on how to accomplish specific goals using the software. Target audience: existing users who want to complete a particular task.
-- Reference documentation - lookup material that helps users find precise information about the software, such as functions, commands, parameters, APIs, and configuration options. 
+- **Tutorials** - lessons that guide learners through a series of exercises to build proficiency using the code. Target audience: new users and learners who are unfamiliar with the software.
+- **How-to guides** - step by step instructions on how to accomplish specific goals using the software. Target audience: existing users who want to complete a particular task.
+- **Reference documentation** - lookup material that helps users find precise information about the software, such as functions, commands, parameters, APIs, and configuration options. 
 Reference documentation can often be generated automatically from code-level docstrings. Target audience: developers, advanced users, and maintainers who need accurate technical details.
-- Explanations - conceptual discussions that help users understand implementation decisions, design choices, and underlying principles. 
-Target audience: developers, maintainers, and contributors who need to understand the reasoning behind the software.
+- **Explanations** - conceptual discussions that help users understand implementation decisions, design choices, and underlying principles. 
 
-Other guides on writing documentation, such as [Write the Docs][write-the-docs] and [The Good Docs Project][the-good-docs-project], provide a wide range of resources and templates to help teams produce high-quality documentation.
+- Target audience: developers, maintainers, contributors and system administrators who need to understand the reasoning behind the software.
 
-You do not need to provide all of the above documentation types, but you should aim to have documentation that serves each of your intended audiences.
+Other documentation frameworks and communities, such as [Write the Docs][write-the-docs] and [The Good Docs Project][the-good-docs-project], provide a wealth of resources to help teams create high-quality documentation.
+
+You do not need to provide every documentation type described above. 
+Instead, focus on creating documentation that meets the needs of your intended audiences. 
+The exact mix of documentation will depend on your software, its complexity, and the people who use, contribute to, deploy and maintain it.
 
 ## Project-level documentation
 
