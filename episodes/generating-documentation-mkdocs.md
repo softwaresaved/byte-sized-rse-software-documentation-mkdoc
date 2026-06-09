@@ -22,17 +22,16 @@ MkDocs is a static site generator tool that can be used to generate documentatio
 MkDocs builds standard static HTML files as its output which you host anywhere, for example on GitHub Pages or GitLab or any other website hosting platform.
 
 At its core, MkDocs simply turns your Markdown files into a static website.
-You can write these manually for any project, regardless of the language it is built in.
+You can write Markdown files manually for any project, regardless of the language it is built in.
 
 If you want to automatically generate documentation from your code's docstrings, you will also need the `mkdocstrings` plugin. 
 
 MkDocs is written in Python and requires Python to run the `mkdocs` commands but you can use MkDocs to create documentation for software projects written in a number of programming language (as long as there is a handler for it).
 Currently, there are `mkdocstrings` handlers for the C, Crystal, GitHub Actions, Python, MATLAB, TypeScript, and VBA languages, as well as for shell scripts/libraries.
 
-## Creating and activating a virtual environment
-...
-
 ## Installing MkDocs
+
+Within an active virtual environment, do:
 
 ```bash
 python3 -m pip install mkdocs
@@ -40,7 +39,7 @@ python3 -m pip install "mkdocstrings[python]"
 python3 -m pip install mkdocs-material
 ```
 
-Let's creates a new MkDocs project in the root of the spacewalks directory:
+Let's creates a new MkDocs project in the root of the spacewalks directory by running the `mkdocs` "new" command:
 
 ```bash
 mkdocs new .    
@@ -51,8 +50,7 @@ INFO    -  Writing config file: ./mkdocs.yml
 INFO    -  Writing initial docs: ./docs/index.md
 ```
 
-This command creates a new MkDocs project in the current directory with a `docs` folder containing an `index.md` file
-and a `mkdocs.yml` configuration file in the root of our project.
+This command creates a new MkDocs project in the current directory with a `docs` folder containing an `index.md` file and a `mkdocs.yml` configuration file in the root of our project.
 
 Now, let's fill in the `mkdocs.yml` configuration file for our project.
 
@@ -70,11 +68,9 @@ nav:
   - Background: explanation.md
 ```
 
-Note `font: false` variable is for GDPR compliance; `use_directory_url: false` variable tells MKDocs tools how to
-handle URLs for documentation that is served as a website (we will cover this in a moment).
+Note `font: false` variable is for GDPR compliance; `use_directory_url: false` variable tells MKDocs tools how to handle URLs for documentation that is served as a website (we will cover this in a moment).
 
-Let's add support for `mkdocstrings` - this will allow us to automatically add our docstrings
-into our documentation using a simple tag.
+Let's add support for `mkdocstrings` - this will allow us to automatically add our docstrings into our documentation using a simple tag.
 
 ```yaml
 site_name: Spacewalks Documentation
@@ -91,20 +87,18 @@ nav:
 
 plugins:
   - mkdocstrings
-
 ```
 
 Let's populate our `docs/` folder to match our configuration file.
 
 ```bash
-(venv_spacewalks) $ touch docs/tutorials.md
-(venv_spacewalks) $ touch docs/how-to-guides.md
-(venv_spacewalks) $ touch docs/reference.md
-(venv_spacewalks) $ touch docs/explanation.md
+touch docs/tutorials.md
+touch docs/how-to-guides.md
+touch docs/reference.md
+touch docs/explanation.md
 ```
 
-Let's populate our reference file `reference.md` with some preamble to include
-before the reference manual that will be generated from the docstrings we created.
+Let's populate our reference file `reference.md` with some preamble to include before the reference manual that will be generated from the docstrings we created.
 
 ```markdown
 This file documents the key functions in the Spacewalks tool.
@@ -117,28 +111,24 @@ It is provided as a reference manual.
 Finally, let's build our documentation.
 
 ```bash
-(venv_spacewalks) $ mkdocs build
+mkdocs build
 ```
 
 ```output
 INFO    -  Cleaning site directory
-INFO    -  Building documentation to directory: /Users/AnnResearcher/Desktop/Spacewalks/site
+INFO    -  Building documentation to directory: /Users/AnnResearcher/spacewalks/site
 WARNING -  griffe: eva_data_analysis.py:105: No type or annotation for returned value 'int'
 WARNING -  griffe: eva_data_analysis.py:84: No type or annotation for returned value 1
 WARNING -  griffe: eva_data_analysis.py:33: No type or annotation for returned value 1
 INFO    -  Documentation built in 0.31 seconds
 ```
 
-Once the build step is completed, our documentation site is saved to
-a `site` folder in the root of our project folder.
-These files will be distributed with our code. We can either direct users
-to read these files locally on their own device using their browser,
-or we can choose to host our documentation as a website that our
-uses can navigate to.
+Once the build step is completed, our documentation site is saved to a `site` folder in the root of our project folder.
+These files will be distributed with our code. 
+We can either direct users to read these files locally on their own device using their browser, or we can choose to host our documentation as a website that our uses can navigate to.
 
-Note that we used the setting `use_directory_urls: false` in the `mkdocs.yml` file. This setting
-ensures that the documentation site is generated with URLs that are easy to navigate
-locally on a user's device.
+Note that we used the setting `use_directory_urls: false` in the `mkdocs.yml` file. 
+This setting ensures that the documentation site is generated with URLs that are easy to navigate locally on a user's device.
 
 ::: challenge
 
@@ -155,14 +145,14 @@ Check `site/reference.html` to see how docstrings from your functions are provid
 Finally, let us commit our documentation to the main branch of our Git repository and push the changes to GitHub.
 
 ```bash
-(venv_spacewalks) $ git add mkdocs.yml 
-(venv_spacewalks) $ git add docs/
-(venv_spacewalks) $ git add site/
-(venv_spacewalks) $ git commit -m "Add project-level documentation"
-(venv_spacewalks) $ python3 -m pip freeze > requirements.txt
-(venv_spacewalks) $ git add requirements.txt 
-(venv_spacewalks) $ git commit -m "Added mkdocs plugin"
-(venv_spacewalks) $ git push origin main
+git add mkdocs.yml 
+git add docs/
+git add site/
+git commit -m "Add project-level documentation"
+python3 -m pip freeze > requirements.txt
+git add requirements.txt 
+git commit -m "Added mkdocs plugin"
+git push origin main
 ```
 
 ::::::::::::::::::::::::::::::::::::: callout
@@ -179,16 +169,14 @@ We can also make our documentation available as a live website by deploying our 
 
 ### GitHub Pages
 
-As our repository is hosted in GitHub, we can use GitHub Pages - a service that
-allows GitHub users to host websites directly from their GitHub repositories.
+As our repository is hosted in GitHub, we can use GitHub Pages - a service that allows GitHub users to host websites directly from their GitHub repositories.
 
 There are two types of GitHub Pages: project pages and user/organization Pages.
-While similar, they have different deployment workflows, and we will only discuss
-project pages here. For information about deploying to user/organisational pages, see
-[MkDocs Deployment pages][mkdocs-deploy].
+While similar, they have different deployment workflows, and we will only discuss project pages here. 
+For information about deploying to user/organisational pages, see [MkDocs Deployment pages][mkdocs-deploy].
 
-Project Pages deploy site files to a branch (by default the `gh-pages` branch, but it can be any other branch)
-within the project repository. To deploy our documentation:
+Project Pages deploy site files to a branch (by default the `gh-pages` branch, but it can be any other branch) within the project repository. 
+To deploy your documentation:
 
 > **Warning!**
 > Before we proceed to the next step, we MUST ensure that there are no uncommitted changes or untracked files in
@@ -196,7 +184,7 @@ within the project repository. To deploy our documentation:
 >
 > If there are, the commands used in the upcoming steps will include them in our documentation!
 
-1. (If not done already), let us commit our documentation to the main branch of our git repository and push the changes to GitHub.
+1. (If not done already), let us commit our documentation to the main branch of our Git repository and push the changes to GitHub.
 
 ```bash
 (venv_spacewalks) $ git add mkdocs.yml 
@@ -206,8 +194,7 @@ within the project repository. To deploy our documentation:
 (venv_spacewalks) $ git push origin main
 ```
 
-2. Once we are on the main branch and all our changes are up to date, run the following command from the command line
-   terminal to deploy our documentation to GitHub.
+2. Once we are on the main branch and all our changes are up to date, run the following command from the command line terminal to deploy our documentation to GitHub.
 
 ```bash
 # Important: 
@@ -218,13 +205,13 @@ within the project repository. To deploy our documentation:
 
 ```output
 INFO    -  Cleaning site directory
-INFO    -  Building documentation to directory: /Users/AnnResearch/Desktop/Spacewalks/site
+INFO    -  Building documentation to directory: /Users/AnnResearch/spacewalks/site
 WARNING -  griffe: eva_data_analysis.py:105: No type or annotation for returned value 'int'
 WARNING -  griffe: eva_data_analysis.py:84: No type or annotation for returned value 1
 WARNING -  griffe: eva_data_analysis.py:33: No type or annotation for returned value 1
 INFO    -  Documentation built in 0.37 seconds
 WARNING -  Version check skipped: No version specified in previous deployment.
-INFO    -  Copying '/Users/AnnResearcher/Desktop/Spacewalks/site' to 'gh-pages' branch and pushing to
+INFO    -  Copying '/Users/AnnResearcher/spacewalks/site' to 'gh-pages' branch and pushing to
            GitHub.
 Enumerating objects: 63, done.
 Counting objects: 100% (63/63), done.
@@ -242,8 +229,7 @@ To https://github.com/kkh451/spacewalks-dev.git
 INFO    -  Your documentation should shortly be available at: https://kkh451.github.io/spacewalks/
 ```
 
-This command will build our documentation with MkDocs, then commit and push the files to the `gh-pages` branch using
-the GitHub `ghp-import` tool which is installed as a dependency of MkDocs.
+This command will build our documentation with MkDocs, then commit and push the files to the `gh-pages` branch using the GitHub `ghp-import` tool which is installed as a dependency of MkDocs.
 
 For more options, use:
 
@@ -251,25 +237,12 @@ For more options, use:
 mkdocs gh-deploy --help
 ```
 
-Notice that the deploy command did not allow us to preview the site before it was pushed to GitHub; so, it is a good
-idea to check changes locally with the build commands before deploying.
+Notice that the deploy command did not allow us to preview the site before it was pushed to GitHub; so, it is a good idea to check changes locally with the build commands before deploying.
 
-### Other options
-
-You can find out about other deployment options including free documentation hosting service ReadTheDocs on the
-[MkDocs deployment pages][mkdocs-deploy].
 
 ::::::
 :::::::::::::::::::::::::::::::::::::
 
-## Documentation guides
-
-Once we start to consider other forms of documentation beyond the README,
-we can also increase reusability of our code by ensuring that the content and style of
-our documentation matches its purpose.
-
-Documentation guides such as [Write the Docs][write-the-docs], [The Good Docs Project][the-good-docs-project] and the [Diataxis framework][diataxis-framework]
-provide a range of resources including documentation templates to help to help us do this.
 
 :::::: challenge
 
@@ -309,13 +282,13 @@ The specified destination folder `data/clean/` must exist before running spacewa
 Remember to rebuild your documentation after the above change:
 
 ```bash
-(venv_spacewalks) $ mkdocs build
+(venv) $ mkdocs build
 ```
 :::
 
 ::::::
 
-The Diataxis framework provides guidance for developing technical documentation for different purposes.
+The Diátaxis framework provides guidance for developing technical documentation for different purposes.
 Tutorials differ in purpose and scope to how-to guides, and as a result, differ in content and style.
 
 ::::: challenge
@@ -416,32 +389,6 @@ and filename according to your needs.
 :::
 ::::::
 
-Now that we have seen examples of both a how-to guide and a tutorial, let's compare the two.
-
-::::::::::::::::::::::::::::::::::::: challenge
-
-### Tutorial vs. how-to guide - discussion (5 min)
-
-How does the content and language of our example tutorial differ from our example how-to guide?
-
-:::::::::::::::::::::::: solution
-
-
-In terms of content:
-
-- The tutorial clearly signposts what will be covered
-- The tutorial includes a narrative of each step and the expected output
-- The tutorial highlights important behaviour the learner should notice
-- The tutorial includes an exercise to practice skills
-
-In terms of language:
-
-- The tutorial uses the "we" language
-- The tutorial uses imperative to provide clear instructions, e.g. "First do x, then do y."
-
-:::::::::::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::
-
 Do not forget to commit any uncommitted changes you may have and then push your work to GitHub.
 
 ```bash
@@ -452,8 +399,7 @@ Do not forget to commit any uncommitted changes you may have and then push your 
 
 ## Summary
 
-In this episode we have highlighted the importance of software project documentation (e.g. README, license, and citation files)
-in making research code understandable, reusable, and reproducible.
+In this episode we have highlighted the importance of software project documentation (e.g. README, license, and citation files) in making research code understandable, reusable, and reproducible.
 
 We have also explored tools and formats for delivering tutorials, how-to guides, and reference materials -
 like Markdown files, Wikis, and static site generators (e.g. MkDocs) - and highlighted the Diátaxis framework for
@@ -464,5 +410,6 @@ structuring documentation effectively.
 
 ::: keypoints
 
-TODO
+- TODO
+
 :::

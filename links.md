@@ -17,3 +17,4 @@ any links that you are not going to use.
 [opensource-licence-guide]: https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project
 [zotero]: https://www.zotero.org/
 [cffinit-webapp]: https://citation-file-format.github.io/cff-initializer-javascript/#/
+[vscode]: https://code.visualstudio.com/

@@ -67,18 +67,28 @@ A few things to note about the code:
 
 ## Running the Example Code
 
-Let's see if the code runs.
+Let's run the code.
 
-Firstly, we will install the necessary dependencies:
+First, we will create and activate a virtual environment called "venv" from the root of the software project directory:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate # Mac or Linux
+source venv_spacewalks/Scripts/activate # Windows
+(venv) $
+```
+The active virtual environment is indicated in the command line prompt between the round brackets: "(venv)".
+
+Next, we will install the necessary dependencies from the `requirements.txt` file using `pip`:
 
 ```
-python3 -m pip install -r requirements.txt
+$ python3 -m pip install -r requirements.txt
 ```
 
 Note: some users may be able to just use the `python` command instead of `python3`.
 We are using `python3` just to be on the safe side.
 
-To ensure the code is working correctly, run the tests using Pytest.
+To ensure the code is working correctly, run the tests provided using Pytest.
 
 ```
 python3 -m pytest
@@ -97,11 +107,9 @@ If the code runs successfully, you should get the resulting plot in results/cumu
 
 ## What documentation for this software is missing?
 
-Would you be able to figure out how to run the code on your own?
-
 ::: hint
  
-- Would you be able to figure out how to run the code on your own?
+- What instructions would you need to be able to run the code?
 
 :::
 
@@ -109,6 +117,7 @@ Would you be able to figure out how to run the code on your own?
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Minimum information needed to run someone else code should include the purpose of the code, installation and setup instructions (including dependencies), and usage example (how to run the code).
+- Minimum information needed to be able to run someone else code should include the reuse licence, description and purpose of the code, installation and setup instructions (including dependencies), and usage example (how to run the code).
+- Additional information may include more detailed installation guides, API documentation or design documents, list of authors and how to cite the code (this list is not exhaustive).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
