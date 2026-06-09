@@ -24,4 +24,4 @@ TODO.
 
 ## Acknowledgements
 
-This Byte-sized session was based on the "Software documentation" episode of ["Building better research software"][] course, written by Kamilla Kopec-Harding.
+This Byte-sized session was based on the ["Software documentation" episode](https://carpentries-incubator.github.io/better-research-software/07-software-documentation.html) of ["Building better research software" course][https://carpentries-incubator.github.io/better-research-software], written by [Kamilla Kopec-Harding](https://github.com/kkh451).
