@@ -893,13 +893,26 @@ and the resulting plot</li>
 </ul></section><section><h2 class="section-heading" id="running-the-example-code">Running the Example Code<a class="anchor" aria-label="anchor" href="#running-the-example-code"></a>
 </h2>
 <hr class="half-width">
-<p>Let’s see if the code runs.</p>
-<p>Firstly, we will install the necessary dependencies:</p>
-<pre><code>python3 -m pip install -r requirements.txt</code></pre>
+<p>Let’s run the code.</p>
+<p>First, we will create and activate a virtual environment called
+“venv” from the root of the software project directory:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="ex">python3</span> <span class="at">-m</span> venv venv</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="bu">source</span> venv/bin/activate <span class="co"># Mac or Linux</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a><span class="bu">source</span> venv_spacewalks/Scripts/activate <span class="co"># Windows</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a><span class="kw">(</span><span class="ex">venv</span><span class="kw">)</span> <span class="ex">$</span></span></code></pre>
+</div>
+<p>The active virtual environment is indicated in the command line
+prompt between the round brackets: “(venv)”.</p>
+<p>Next, we will install the necessary dependencies from the
+<code>requirements.txt</code> file using <code>pip</code>:</p>
+<pre><code>$ python3 -m pip install -r requirements.txt</code></pre>
 <p>Note: some users may be able to just use the <code>python</code>
 command instead of <code>python3</code>. We are using
 <code>python3</code> just to be on the safe side.</p>
-<p>To ensure the code is working correctly, run the tests using
+<p>To ensure the code is working correctly, run the tests provided using
 Pytest.</p>
 <pre><code>python3 -m pytest</code></pre>
 <p>To run the analysis using the <code>eva_data_analysis.py</code>
@@ -916,7 +929,7 @@ results/cumulative_eva_graph.png</p>
 <h3 class="callout-title">What documentation for this software is
 missing?</h3>
 <div class="callout-content">
-<p>Would you be able to figure out how to run the code on your own?</p>
+
 </div>
 </div>
 </div>
@@ -928,8 +941,7 @@ missing?</h3>
 <div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <ul>
-<li>Would you be able to figure out how to run the code on your
-own?</li>
+<li>What instructions would you need to be able to run the code?</li>
 </ul>
 </div>
 </div>
@@ -943,9 +955,13 @@ own?</li>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>Minimum information needed to run someone else code should include
-the purpose of the code, installation and setup instructions (including
-dependencies), and usage example (how to run the code).</li>
+<li>Minimum information needed to be able to run someone else code
+should include the reuse licence, description and purpose of the code,
+installation and setup instructions (including dependencies), and usage
+example (how to run the code).</li>
+<li>Additional information may include more detailed installation
+guides, API documentation or design documents, list of authors and how
+to cite the code (this list is not exhaustive).</li>
 </ul>
 </div>
 </div>
@@ -956,7 +972,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-generating-documentation-mkdocs"><p>Content from <a href="generating-documentation-mkdocs.html">Generating documentation with MkDocs</a></p>
 <hr>
-<p>Last updated on 2026-06-08 |
+<p>Last updated on 2026-06-09 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-software-documentation-mkdocs/edit/main/episodes/generating-documentation-mkdocs.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -997,8 +1013,8 @@ documentation website for software projects. MkDocs builds standard
 static HTML files as its output which you host anywhere, for example on
 GitHub Pages or GitLab or any other website hosting platform.</p>
 <p>At its core, MkDocs simply turns your Markdown files into a static
-website. You can write these manually for any project, regardless of the
-language it is built in.</p>
+website. You can write Markdown files manually for any project,
+regardless of the language it is built in.</p>
 <p>If you want to automatically generate documentation from your code’s
 docstrings, you will also need the <code>mkdocstrings</code> plugin.</p>
 <p>MkDocs is written in Python and requires Python to run the
@@ -1008,13 +1024,10 @@ language (as long as there is a handler for it). Currently, there are
 <code>mkdocstrings</code> handlers for the C, Crystal, GitHub Actions,
 Python, MATLAB, TypeScript, and VBA languages, as well as for shell
 scripts/libraries.</p>
-</section><section><h2 class="section-heading" id="creating-and-activating-a-virtual-environment">Creating and activating a virtual environment<a class="anchor" aria-label="anchor" href="#creating-and-activating-a-virtual-environment"></a>
-</h2>
-<hr class="half-width">
-<p>…</p>
 </section><section><h2 class="section-heading" id="installing-mkdocs">Installing MkDocs<a class="anchor" aria-label="anchor" href="#installing-mkdocs"></a>
 </h2>
 <hr class="half-width">
+<p>Within an active virtual environment, do:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1023,7 +1036,7 @@ scripts/libraries.</p>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="ex">python3</span> <span class="at">-m</span> pip install mkdocs-material</span></code></pre>
 </div>
 <p>Let’s creates a new MkDocs project in the root of the spacewalks
-directory:</p>
+directory by running the <code>mkdocs</code> “new” command:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1086,10 +1099,10 @@ configuration file.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> touch docs/tutorials.md</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1" aria-label="code-block-6-2"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> touch docs/how-to-guides.md</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1" aria-label="code-block-6-3"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> touch docs/reference.md</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1" aria-label="code-block-6-4"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> touch docs/explanation.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a><span class="fu">touch</span> docs/tutorials.md</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1" aria-label="code-block-6-2"></a><span class="fu">touch</span> docs/how-to-guides.md</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1" aria-label="code-block-6-3"></a><span class="fu">touch</span> docs/reference.md</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1" aria-label="code-block-6-4"></a><span class="fu">touch</span> docs/explanation.md</span></code></pre>
 </div>
 <p>Let’s populate our reference file <code>reference.md</code> with some
 preamble to include before the reference manual that will be generated
@@ -1106,13 +1119,13 @@ from the docstrings we created.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1" aria-label="code-block-8-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> mkdocs build</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1" aria-label="code-block-8-1"></a><span class="ex">mkdocs</span> build</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>INFO    -  Cleaning site directory
-INFO    -  Building documentation to directory: /Users/AnnResearcher/Desktop/Spacewalks/site
+INFO    -  Building documentation to directory: /Users/AnnResearcher/spacewalks/site
 WARNING -  griffe: eva_data_analysis.py:105: No type or annotation for returned value 'int'
 WARNING -  griffe: eva_data_analysis.py:84: No type or annotation for returned value 1
 WARNING -  griffe: eva_data_analysis.py:33: No type or annotation for returned value 1
@@ -1150,14 +1163,14 @@ Git repository and push the changes to GitHub.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1" aria-label="code-block-10-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git add mkdocs.yml </span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1" aria-label="code-block-10-2"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git add docs/</span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1" aria-label="code-block-10-3"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git add site/</span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1" aria-label="code-block-10-4"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add project-level documentation"</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1" aria-label="code-block-10-5"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 <span class="at">-m</span> pip freeze <span class="op">&gt;</span> requirements.txt</span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1" aria-label="code-block-10-6"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git add requirements.txt </span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1" aria-label="code-block-10-7"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Added mkdocs plugin"</span></span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1" aria-label="code-block-10-8"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git push origin main</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1" aria-label="code-block-10-1"></a><span class="fu">git</span> add mkdocs.yml </span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1" aria-label="code-block-10-2"></a><span class="fu">git</span> add docs/</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1" aria-label="code-block-10-3"></a><span class="fu">git</span> add site/</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1" aria-label="code-block-10-4"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add project-level documentation"</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1" aria-label="code-block-10-5"></a><span class="ex">python3</span> <span class="at">-m</span> pip freeze <span class="op">&gt;</span> requirements.txt</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1" aria-label="code-block-10-6"></a><span class="fu">git</span> add requirements.txt </span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1" aria-label="code-block-10-7"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Added mkdocs plugin"</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1" aria-label="code-block-10-8"></a><span class="fu">git</span> push origin main</span></code></pre>
 </div>
 <div id="hosting-documentation" class="callout">
 <div class="callout-square">
@@ -1176,9 +1189,8 @@ deploying our documentation to a hosting service.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Some options for hosting documentation </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
-<div class="accordion-body">
-<div class="section level3">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div class="section level3 accordion-body">
 <h3 id="github-pages">GitHub Pages<a class="anchor" aria-label="anchor" href="#github-pages"></a>
 </h3>
 <p>As our repository is hosted in GitHub, we can use GitHub Pages - a
@@ -1191,7 +1203,7 @@ about deploying to user/organisational pages, see [MkDocs Deployment
 pages][mkdocs-deploy].</p>
 <p>Project Pages deploy site files to a branch (by default the
 <code>gh-pages</code> branch, but it can be any other branch) within the
-project repository. To deploy our documentation:</p>
+project repository. To deploy your documentation:</p>
 <blockquote>
 <p><strong>Warning!</strong> Before we proceed to the next step, we MUST
 ensure that there are no uncommitted changes or untracked files in our
@@ -1201,7 +1213,7 @@ them in our documentation!</p>
 </blockquote>
 <ol style="list-style-type: decimal">
 <li>(If not done already), let us commit our documentation to the main
-branch of our git repository and push the changes to GitHub.</li>
+branch of our Git repository and push the changes to GitHub.</li>
 </ol>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1229,13 +1241,13 @@ documentation to GitHub.</li>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>INFO    -  Cleaning site directory
-INFO    -  Building documentation to directory: /Users/AnnResearch/Desktop/Spacewalks/site
+INFO    -  Building documentation to directory: /Users/AnnResearch/spacewalks/site
 WARNING -  griffe: eva_data_analysis.py:105: No type or annotation for returned value 'int'
 WARNING -  griffe: eva_data_analysis.py:84: No type or annotation for returned value 1
 WARNING -  griffe: eva_data_analysis.py:33: No type or annotation for returned value 1
 INFO    -  Documentation built in 0.37 seconds
 WARNING -  Version check skipped: No version specified in previous deployment.
-INFO    -  Copying '/Users/AnnResearcher/Desktop/Spacewalks/site' to 'gh-pages' branch and pushing to
+INFO    -  Copying '/Users/AnnResearcher/spacewalks/site' to 'gh-pages' branch and pushing to
            GitHub.
 Enumerating objects: 63, done.
 Counting objects: 100% (63/63), done.
@@ -1266,30 +1278,12 @@ MkDocs.</p>
 before it was pushed to GitHub; so, it is a good idea to check changes
 locally with the build commands before deploying.</p>
 </div>
-<div class="section level3">
-<h3 id="other-options">Other options<a class="anchor" aria-label="anchor" href="#other-options"></a>
-</h3>
-<p>You can find out about other deployment options including free
-documentation hosting service ReadTheDocs on the [MkDocs deployment
-pages][mkdocs-deploy].</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="documentation-guides">Documentation guides<a class="anchor" aria-label="anchor" href="#documentation-guides"></a>
-</h2>
-<hr class="half-width">
-<p>Once we start to consider other forms of documentation beyond the
-README, we can also increase reusability of our code by ensuring that
-the content and style of our documentation matches its purpose.</p>
-<p>Documentation guides such as <a href="https://www.writethedocs.org/" class="external-link">Write the Docs</a>, <a href="https://www.thegooddocsproject.dev/" class="external-link">The Good Docs Project</a> and
-the <a href="https://diataxis.fr/" class="external-link">Diataxis framework</a> provide a
-range of resources including documentation templates to help to help us
-do this.</p>
 <div id="spacewalks-how-to-guide-15-min" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1314,7 +1308,7 @@ dataset generated by the Spacewalks software.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>An effective how-to guide should:</p>
 <ul>
@@ -1341,13 +1335,13 @@ The specified destination folder `data/clean/` must exist before running spacewa
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1" aria-label="code-block-16-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> mkdocs build</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1" aria-label="code-block-16-1"></a><span class="kw">(</span><span class="ex">venv</span><span class="kw">)</span> <span class="ex">$</span> mkdocs build</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>The Diataxis framework provides guidance for developing technical
+<p>The Diátaxis framework provides guidance for developing technical
 documentation for different purposes. Tutorials differ in purpose and
 scope to how-to guides, and as a result, differ in content and
 style.</p>
@@ -1370,7 +1364,7 @@ dataset when running the analysis script.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Here is what an example tutorial may look like.</p>
 <pre><code>## Introduction
@@ -1475,48 +1469,6 @@ according to your needs.</p>
 </div>
 </div>
 </div>
-<p>Now that we have seen examples of both a how-to guide and a tutorial,
-let’s compare the two.</p>
-<div id="tutorial-vs.-how-to-guide---discussion-5-min" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="tutorial-vs.-how-to-guide---discussion-5-min" class="callout-inner">
-<h3 class="callout-title">Tutorial vs. how-to guide - discussion (5
-min)</h3>
-<div class="callout-content">
-<p>How does the content and language of our example tutorial differ from
-our example how-to guide?</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
-<div class="accordion-body">
-<p>In terms of content:</p>
-<ul>
-<li>The tutorial clearly signposts what will be covered</li>
-<li>The tutorial includes a narrative of each step and the expected
-output</li>
-<li>The tutorial highlights important behaviour the learner should
-notice</li>
-<li>The tutorial includes an exercise to practice skills</li>
-</ul>
-<p>In terms of language:</p>
-<ul>
-<li>The tutorial uses the “we” language</li>
-<li>The tutorial uses imperative to provide clear instructions,
-e.g. “First do x, then do y.”</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 <p>Do not forget to commit any uncommitted changes you may have and then
 push your work to GitHub.</p>
 <div class="codewrapper sourceCode" id="cb23">
@@ -1543,7 +1495,9 @@ framework for structuring documentation effectively.</p>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<p>TODO</p>
+<ul>
+<li>TODO</li>
+</ul>
 </div>
 </div>
 </div>
