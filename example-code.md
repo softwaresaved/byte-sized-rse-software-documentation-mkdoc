@@ -17,16 +17,16 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Obtaining Example Code
-
 For this lesson we'll be using some [example code that does spacewalks analysis](https://github.com/softwaresaved/spacewalks) available on GitHub, which we'll clone onto our machines using the Bash shell.
 The spacewalks code is available from:
 
 `https://github.com/softwaresaved/spacewalks`.
 
-Firstly, create your own copy of the spacewalks repository that you can commit to by using `Use this template` button on GitHub.
+## Obtaining Example Code
 
-Then, open a command-line shell (e.g. via Git Bash in Windows, bash shell on Linux or Terminal on a Mac) and navigate to where you would like the example code to reside (e.g. to your home directory).
+Create your own copy of the spacewalks repository above using `Use this template` button on GitHub.
+
+Open a command-line shell (e.g. via Git Bash in Windows, bash shell on Linux or Terminal on a Mac) and navigate to where you would like the example code to reside (e.g. to your home directory).
 
 Use Git to clone your copy of the spacewalks repository.
 
@@ -36,18 +36,9 @@ git clone https://github.com/your-repository/spacewalks.git
 cd spacewalks
 ```
 
-::::::::::::::::::::::::::::::::::::::::: instructor
-
-## Checkpoint: Attendee Progress
-
-Who's been able to clone the GitHub repository on their local machine?
-
-:::::::::::::::::::::::::::::::::::::::::
-
-
 ## Examining the Code
 
-Let's take a look at the spacewalk analysis code, which is in the root directory of the repository in a file called `eva_data_analysis.py`.
+Let's take a look at the spacewalk analysis code, which is in the file called `eva_data_analysis.py`.
 Feel free to use your preferred editor of choice, such as Notepad, Nano or Visual Studio Code.
 
 The code is designed to:
@@ -57,12 +48,13 @@ The code is designed to:
 - Perform some calculations to generate summary statistics about the data
 - Make a plot to visualise the data
 
-A few things to note about the code:
+A few things to note about the software project:
 
-- it contains `requirements.txt` file listing its dependencies - Pandas, Pytest, Matplotlib to name a few
-- it already contains comprehensive docstrings comments
-- it contains the `tests` folder with tests
-- it contains `data` folder with input data and `results` folder where it saves data converted to CSV format and the resulting plot
+- `eva_data_analysis.py` Python script already contains comprehensive docstrings comments
+- `requirements.txt` file in the project root lists the software dependencies - such as Pandas, Pytest, Matplotlib
+- `data` folder contains input data
+- `results` folder contains cleaned dataset converted to CSV format and the resulting plot
+- `tests` folder contains test code
 
 
 ## Running the Example Code
@@ -86,9 +78,8 @@ $ python3 -m pip install -r requirements.txt
 ```
 
 Note: some users may be able to just use the `python` command instead of `python3`.
-We are using `python3` just to be on the safe side.
 
-To ensure the code is working correctly, run the tests provided using Pytest.
+To ensure the code is working correctly, run the tests using Pytest.
 
 ```
 python3 -m pytest
@@ -100,7 +91,7 @@ To run the analysis using the `eva_data_analysis.py` script from the command lin
 python3 eva_data_analysis.py data/eva-data.json results/eva-data.csv
 ```
 
-If the code runs successfully, you should get the resulting plot in results/cumulative_eva_graph.png
+If the code runs successfully, you should get the resulting plot in `results/cumulative_eva_graph.png`.
 
 
 ::: challenge
@@ -109,11 +100,20 @@ If the code runs successfully, you should get the resulting plot in results/cumu
 
 ::: hint
  
-- What instructions would you need to be able to run the code?
+What documentation would you need to be able to run the code?
 
 :::
 
 :::
+
+With the code provided as is (e.g. someone sent you the code via email or on a memory stick), would you be able to answer the following questions:
+
+- Could you run the code on your platform/operating system (is there documentation that covers installation instructions)?
+- What programs or libraries do you need to install to make it work (and which versions)?
+- Are you allowed to use this code in your own work? If you did, would the owner expect credit in some form (paper authorship, citation or acknowledgement)?
+- Are you allowed to modify the files or share them with others?
+- How easy would it be to change its parameters to calculate a different statistic, or run the analysis on a different input file?
+
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
