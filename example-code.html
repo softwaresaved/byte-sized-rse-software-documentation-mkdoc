@@ -294,7 +294,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Example Code</h1>
-        <p>Last updated on 2026-06-09 |
+        <p>Last updated on 2026-06-11 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-software-documentation-mkdocs/edit/main/episodes/example-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -329,18 +329,17 @@ reuse some else’s code?</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="obtaining-example-code">Obtaining Example Code<a class="anchor" aria-label="anchor" href="#obtaining-example-code"></a></h2>
-<hr class="half-width"><p>For this lesson we’ll be using some <a href="https://github.com/softwaresaved/spacewalks" class="external-link">example code that
+<p>For this lesson we’ll be using some <a href="https://github.com/softwaresaved/spacewalks" class="external-link">example code that
 does spacewalks analysis</a> available on GitHub, which we’ll clone onto
 our machines using the Bash shell. The spacewalks code is available
 from:</p>
 <p><code>https://github.com/softwaresaved/spacewalks</code>.</p>
-<p>Firstly, create your own copy of the spacewalks repository that you
-can commit to by using <code>Use this template</code> button on
-GitHub.</p>
-<p>Then, open a command-line shell (e.g. via Git Bash in Windows, bash
-shell on Linux or Terminal on a Mac) and navigate to where you would
-like the example code to reside (e.g. to your home directory).</p>
+<section><h2 class="section-heading" id="obtaining-example-code">Obtaining Example Code<a class="anchor" aria-label="anchor" href="#obtaining-example-code"></a></h2>
+<hr class="half-width"><p>Create your own copy of the spacewalks repository above using
+<code>Use this template</code> button on GitHub.</p>
+<p>Open a command-line shell (e.g. via Git Bash in Windows, bash shell
+on Linux or Terminal on a Mac) and navigate to where you would like the
+example code to reside (e.g. to your home directory).</p>
 <p>Use Git to clone your copy of the spacewalks repository.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -349,12 +348,11 @@ like the example code to reside (e.g. to your home directory).</p>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="fu">git</span> clone https://github.com/your-repository/spacewalks.git</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="bu">cd</span> spacewalks</span></code></pre>
 </div>
-
 </section><section><h2 class="section-heading" id="examining-the-code">Examining the Code<a class="anchor" aria-label="anchor" href="#examining-the-code"></a></h2>
 <hr class="half-width"><p>Let’s take a look at the spacewalk analysis code, which is in the
-root directory of the repository in a file called
-<code>eva_data_analysis.py</code>. Feel free to use your preferred
-editor of choice, such as Notepad, Nano or Visual Studio Code.</p>
+file called <code>eva_data_analysis.py</code>. Feel free to use your
+preferred editor of choice, such as Notepad, Nano or Visual Studio
+Code.</p>
 <p>The code is designed to:</p>
 <ul><li>Read in the data from the JSON file</li>
 <li>Change the data from one data format to another and saves to a file
@@ -362,14 +360,20 @@ in the new format (CSV)</li>
 <li>Perform some calculations to generate summary statistics about the
 data</li>
 <li>Make a plot to visualise the data</li>
-</ul><p>A few things to note about the code:</p>
-<ul><li>it contains <code>requirements.txt</code> file listing its
-dependencies - Pandas, Pytest, Matplotlib to name a few</li>
-<li>it already contains comprehensive docstrings comments</li>
-<li>it contains the <code>tests</code> folder with tests</li>
-<li>it contains <code>data</code> folder with input data and
-<code>results</code> folder where it saves data converted to CSV format
-and the resulting plot</li>
+</ul><p>A few things to note about the software project:</p>
+<ul><li>
+<code>eva_data_analysis.py</code> Python script already contains
+comprehensive docstrings comments</li>
+<li>
+<code>requirements.txt</code> file in the project root lists the
+software dependencies - such as Pandas, Pytest, Matplotlib</li>
+<li>
+<code>data</code> folder contains input data</li>
+<li>
+<code>results</code> folder contains cleaned dataset converted to
+CSV format and the resulting plot</li>
+<li>
+<code>tests</code> folder contains test code</li>
 </ul></section><section><h2 class="section-heading" id="running-the-example-code">Running the Example Code<a class="anchor" aria-label="anchor" href="#running-the-example-code"></a></h2>
 <hr class="half-width"><p>Let’s run the code.</p>
 <p>First, we will create and activate a virtual environment called
@@ -388,16 +392,15 @@ prompt between the round brackets: “(venv)”.</p>
 <code>requirements.txt</code> file using <code>pip</code>:</p>
 <pre><code>$ python3 -m pip install -r requirements.txt</code></pre>
 <p>Note: some users may be able to just use the <code>python</code>
-command instead of <code>python3</code>. We are using
-<code>python3</code> just to be on the safe side.</p>
-<p>To ensure the code is working correctly, run the tests provided using
+command instead of <code>python3</code>.</p>
+<p>To ensure the code is working correctly, run the tests using
 Pytest.</p>
 <pre><code>python3 -m pytest</code></pre>
 <p>To run the analysis using the <code>eva_data_analysis.py</code>
 script from the command line terminal, do:</p>
 <pre><code>python3 eva_data_analysis.py data/eva-data.json results/eva-data.csv</code></pre>
 <p>If the code runs successfully, you should get the resulting plot in
-results/cumulative_eva_graph.png</p>
+<code>results/cumulative_eva_graph.png</code>.</p>
 <div id="what-documentation-for-this-software-is-missing" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -416,14 +419,27 @@ missing?</h3>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
-<ul><li>What instructions would you need to be able to run the code?</li>
-</ul></div>
+<p>What documentation would you need to be able to run the code?</p>
 </div>
 </div>
 </div>
-<div id="keypoints1" class="callout keypoints">
+</div>
+<p>With the code provided as is (e.g. someone sent you the code via
+email or on a memory stick), would you be able to answer the following
+questions:</p>
+<ul><li>Could you run the code on your platform/operating system (is there
+documentation that covers installation instructions)?</li>
+<li>What programs or libraries do you need to install to make it work
+(and which versions)?</li>
+<li>Are you allowed to use this code in your own work? If you did, would
+the owner expect credit in some form (paper authorship, citation or
+acknowledgement)?</li>
+<li>Are you allowed to modify the files or share them with others?</li>
+<li>How easy would it be to change its parameters to calculate a
+different statistic, or run the analysis on a different input file?</li>
+</ul><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -504,7 +520,7 @@ any links that you are not going to use.
   "url": "https://carpentries-incubator.github.io/byte-sized-rse-software-documentation-mkdocs/example-code.html",
   "identifier": "https://carpentries-incubator.github.io/byte-sized-rse-software-documentation-mkdocs/example-code.html",
   "dateCreated": "2026-04-21",
-  "dateModified": "2026-06-09",
+  "dateModified": "2026-06-11",
   "datePublished": "2026-06-11"
 }
 
