@@ -710,9 +710,30 @@ MkDocs.</p>
 <p>Notice that the deploy command did not allow us to preview the site
 before it was pushed to GitHub. So, it is a good idea to build site and
 check it locally with the build/serve commands before deploying.</p>
-<p>TODO: configure GH Pages, and check the website on GitHub</p>
+<p>If you navigate to your software repository on GitHub, you may notice
+the new branch called <code>gh-pages</code> had been created by the
+<code>mkdocs gh-deploy</code> command and populated with the contents of
+your <code>site</code> folder.</p>
+<p>If you navigate to “Settings/Pages” portion of your software
+repository, you may notice that GitHub Pages has already been configured
+to serve a website from your <code>gh-pages</code> branch. You can visit
+the live site by following the URL that GitHub Pages creates for your
+repository.</p>
+<p>If it has not worked as described, on the “Settings/Pages” page under
+“Build and deployment” section you can configure the repository branch
+(should be <code>gh-pages</code>) that the GitHub Pages site is built
+from.</p>
 </section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a></h2>
-<hr class="half-width"><div id="keypoints1" class="callout keypoints">
+<hr class="half-width"><p>We have explored the static website generator tool MkDocs for
+generating documentation website for our software project.
+<code>mkdocs-material</code> plugin for MkDocs creates richer and more
+responsive websites, while <code>mkdocstrings</code> plugin creates
+reference manuals from docstrings in our code.</p>
+<p>Generated documentation pages can be shared with our software - they
+can reside in our software repository and be used by end users offline
+or we can use website hosting platforms such as GitHub to host
+documentation websites.</p>
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -720,9 +741,9 @@ check it locally with the build/serve commands before deploying.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul><li>Static site generators (such as MkDocs) can help use generate
-documentation websites.</li>
+documentation websites from Markdown files or docstrings.</li>
 <li>GitHub Pages provide a free webpage hosting service for your
-documentation website</li>
+documentation website.</li>
 </ul></div>
 </div>
 </div>
