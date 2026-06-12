@@ -19,18 +19,19 @@ exercises: 45
 ## MkDocs documentation tool
 
 MkDocs is a static site generator specifically designed for creating documentation websites.
-MkDocs can build other websites (i.e. not just documentation sites) - it takes Markdown files as input and builds/outputs HTML files which you host anywhere, for example on GitHub Pages or any other website hosting platform.
+MkDocs can build other websites (i.e. not just documentation sites). 
+It takes Markdown files as input and builds/outputs HTML files which you host anywhere, for example on GitHub Pages or any other website hosting platform.
+
 `mkdocs` is a Python package that can be installed, for example, with `pip` and requires Python to run the `mkdocs` command.
 You do not need any further knowledge of Python to build your website with MkDocs after that.
 
 By using the MkDocs tool alone, you get a relatively vanilla and straightforward website.
-There are additional plugins that build on top of MkDocs. 
+There are additional plugins that build on top of MkDocs that provide additional functionalities to the built websites. 
 
 ### mkdocs-material plugin for MkDocs
 
-"Material for MkDocs" (`mkdocs-material`) is a theme plugin that creates documentations site using a modern, responsive design.
+"Material for MkDocs" (`mkdocs-material`) is a theme plugin for MkDocs that creates documentations site using a modern, responsive design.
 In addition to changing the look of the website, "Material for MkDocs" also enhances the functionality of websites with features like blog posts, social cards, advanced search capabilities, etc.
-MkDocs provides the core functionality of building a static site, while "Material for MkDocs" elevates the visual and interactive experience of your documentation.
 MkDocs provides the core functionality of building a static site, while "Material for MkDocs" elevates the visual and interactive experience of your documentation.
 
 ### mkdocstrings plugin for MkDocs
@@ -38,13 +39,13 @@ MkDocs provides the core functionality of building a static site, while "Materia
 If you also want to automatically generate documentation from your code's docstrings, you will need the `mkdocstrings` plugin.
 This plugin can be used with MkDocs to create documentation for software projects written in a number of programming language - as long as there is a `mkdocstrings` "handler" for it.
 Currently, there are `mkdocstrings` handlers for the C, Crystal, GitHub Actions, Python, MATLAB, TypeScript, and VBA languages, as well as for shell scripts.
-Without this plugin, core MkDocs only "understands" Markdown files.
+Without this plugin, core MkDocs tool only "understands" Markdown files.
 
 ## Installing MkDocs & relevant plugins
 
-Let's install `mkdocs` tool, `mkdocs-material` plugin, and `mkdocstrings` plugin for Python language.
+Let's install the `mkdocs` tool, and `mkdocs-material` and `mkdocstrings` (for Python) plugins.
 
-Within an active virtual environment, do:
+Within an active virtual environment of your software project, do:
 
 ```bash
 python3 -m pip install mkdocs
@@ -54,7 +55,7 @@ python3 -m pip install mkdocs-material
 
 ## Generating a documentation website
 
-Let's creates a new MkDocs site in the root of the spacewalks directory by running the `mkdocs` "new" command:
+Let's create a new MkDocs site in the root of the spacewalks directory by running the `mkdocs new` command:
 
 ```bash
 mkdocs new .    
@@ -85,7 +86,10 @@ Note `font: false` variable is for GDPR compliance; `use_directory_url: false` v
 We can run the `mkdocs serve` command to see what website looks like now.
 
 ```bash
-mkdocs serve  
+mkdocs serve
+```
+
+```output
 INFO    -  Building documentation...
 INFO    -  Cleaning site directory
 INFO    -  Documentation built in 0.24 seconds
@@ -94,26 +98,27 @@ INFO    -  [13:59:18] Serving on http://127.0.0.1:8000/
 INFO    -  [13:59:32] Browser connected: http://127.0.0.1:8000/
 ```
 
-This command builds the website and serves it locally at [http://127.0.0.1:8000](http://127.0.0.1:8000), which can be accessed from a Web browser.
-There, we can see our basic "Material for MkDocs" website.
+This command first builds the website from the files in `docs` folder and then serves it locally at [http://127.0.0.1:8000](http://127.0.0.1:8000).
+TIf you go to that URL in your browser, you can see your basic "Material for MkDocs" website.
 
-Let's see what this command did.
-If we look at the files in our software project directory, you may notice the "built" version of our documentation site in the new `site` folder in the root of our project.
-This is where our compiled HTML files reside and can be distributed as our documentation webpages together with our code.
-Users can either read these files locally using a browser, or we can host them as a website that users can navigate to.
+The "built" version of our documentation site is located in the new `site` folder in the root of our project.
+This is where MkDocs tool saves the HTML files compiled from Markdown documentation files. 
+This directory serves as your documentation website and can be distributed together with your code.
+Users of your code can then read these pages locally using a Web browser. 
+Alternatively, you can host them as a website that users can navigate to.
 
 Note that we used the setting `use_directory_urls: false` in the `mkdocs.yml` file.
 This setting ensures that the documentation site is generated with URLs that are easy to navigate locally on a user's device.
 
-An alternative to using the `mkdocs serve` command is the `mkdocs build` command - it will only build the webpages in `site` folder but not serve them as a website.
+An alternative to using the `mkdocs serve` command is the `mkdocs build` command - it will only build the webpages in `site` folder but not serve them as a website at [http://127.0.0.1:8000](http://127.0.0.1:8000).
 You will need to re-run this command each time you make a change.
-You can see your webpages by navigating to the in the `site` folder and opening them in a Web browser directly.
+To see your documentation webpages, you have to navigate directly to the `site` folder and open files in a Web browser.
 
 ```bash
 mkdocs build
 ````
 
-Let's add more documentation elements to our site.
+Let's add more documentation elements to our site - for example a setup guide to help users install and run the software, how to guides for common tasks and a reference manual for developers.
 
 ```yaml
 site_name: Spacewalks Documentation
@@ -127,7 +132,7 @@ nav:
   - How-To Guides: how-to-guides.md
   - Reference: reference.md
 ```
-Let's populate our `docs/` folder with Markdown files `setup-guide.md`, `how-to-guides.md` and `reference.md` to match our configuration.
+Let's create Markdown files `setup-guide.md`, `how-to-guides.md` and `reference.md` in `docs/` folder to match our configuration.
 
 ```bash
 touch docs/setup-guide.md
@@ -135,7 +140,7 @@ touch docs/how-to-guides.md
 touch docs/reference.md
 ```
 
-Let's add the following Markdown text to our "Setup guide":
+We can add the following Markdown text to our "Setup guide":
 
 ```text
 ## Pre-requisites
@@ -186,7 +191,7 @@ The second argument is the path the CSV output file.
 If the code runs successfully, you should get the resulting plot in `results/cumulative_eva_graph.png`
 ```
 
-Let's add the following Markdown text to our "How to guides":
+Next, we can add the following Markdown text to our "How to guides":
 
 ```text
 ## How to change the file path of Spacewalk's output dataset
@@ -203,7 +208,7 @@ For example, if you want to save the output data set to the subfolder `data/clea
 The specified destination folder `data/clean/` must exist before running spacewalks analysis script.
 ```
 
-Let's replace the Markdown content of the homepage of our site to include some introduction to our software and point to other documentation parts:
+Finally, let's replace the default Markdown content of the homepage of our site in `index.md` (which was generated by MkDocs) to include some introduction to our software and point to other documentation parts:
 
 ```text
 # Welcome to Spacewalks Documentation Site
@@ -221,12 +226,12 @@ Key features of Spacewalks:
 
 You can find the following documentation:
 
-- [Setup guide](/setup-guide.html) to help you install the software and learn how to run it
+- [Setup guide](./setup-guide.html) to help you install the software and learn how to run it
 - [How to guides](./how-to-guides.html) to help you perform common tasks
 - [Reference manual](./reference.html) - a full API reference
 ```
 
-Let's regenerate our documentation website and see what it looks line now.
+Let's regenerate our documentation website and see what it looks like in a Web browser after these changes.
 
 ### Generating a reference manual from dosctrings 
 
@@ -266,7 +271,7 @@ mkdocs build
 
 ## Hosting documentation
 
-We saw how MkDocs documentation can be distributed with our repository and viewed "offline" using a Web browser.
+We saw how MkDocs documentation can be distributed with our repository and viewed "offline".
 We can also make our documentation available as a live website by deploying our documentation to a website hosting service.
 
 As our repository is hosted in GitHub, we can use GitHub Pages - a free service built into GitHub that allows GitHub users to host websites directly from their GitHub repositories.
@@ -290,9 +295,9 @@ git push origin main
 ::: caution
 
 ### Warning
-Before we proceed to the next step, we MUST ensure that there are no uncommitted changes or untracked files in our repository.
+Before we proceed to the next step, we **must** ensure that there are no uncommitted changes or untracked files in our repository.
 
-If there are, the commands used in the upcoming steps will include them in our documentation!
+If there are, the commands used in the upcoming steps will include them in our documentation.
 :::
 
 ```bash
@@ -333,7 +338,7 @@ To https://github.com/kkh451/spacewalks-dev.git
 INFO    -  Your documentation should shortly be available at: https://kkh451.github.io/spacewalks/
 ```
 
-This command will build our documentation with MkDocs, then commit and push the files to the `gh-pages` branch using the GitHub `ghp-import` tool which is installed as a dependency of MkDocs.
+This command will build our documentation with MkDocs, then commit and push the files to the `gh-pages` branch using the `ghp-import` tool, which is installed together with MkDocs.
 
 For more options, use:
 
@@ -341,11 +346,12 @@ For more options, use:
 mkdocs gh-deploy --help
 ```
 
-Notice that the deploy command did not allow us to preview the site before it was pushed to GitHub; so, it is a good idea to check changes locally with the build commands before deploying.
+Notice that the deploy command did not allow us to preview the site before it was pushed to GitHub.
+So, it is a good idea to build site and check it locally with the build/serve commands before deploying.
 
 ::: keypoints
 
-- Static site generators such as MkDocs) can help use generate documentation websites.
+- Static site generators (such as MkDocs) can help use generate documentation websites.
 - GitHub Pages provide a free webpage hosting service for your documentation website
 
 :::
