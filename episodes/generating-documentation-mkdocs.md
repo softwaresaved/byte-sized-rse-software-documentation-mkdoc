@@ -349,6 +349,10 @@ mkdocs gh-deploy --help
 Notice that the deploy command did not allow us to preview the site before it was pushed to GitHub.
 So, it is a good idea to build site and check it locally with the build/serve commands before deploying.
 
+TODO: configure GH Pages, and check the website on GitHub
+
+## Summary
+
 ::: keypoints
 
 - Static site generators (such as MkDocs) can help use generate documentation websites.
