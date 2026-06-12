@@ -33,7 +33,12 @@ for installing Python in preparation for undertaking their Python lesson.
 Pip Python package should come together with your Python distribution.
 Try typing `pip` at the command line and you should see some usage instructions for the command appear if it is installed.
 
-### VS Code
+### Venv
 
-The hands-on part of this topic will be conducted using Visual Studio Code (VS Code), a widely used IDE.
-Please [download the appropriate version of Visual Studio Code][vs-code] for your operating system (Windows, macOS, or Linux) and system architecture (e.g., 64-bit, ARM).
+Venv Python package should come together with your Python distribution.
+Try typing `venv` at the command line and you should see some usage instructions for the command appear if it is installed.
+
+### Code Editor
+
+For the hands-on part of this topic you will need a code editor to navigate and edit software project files.
+You can use, for example [Visual Studio Code (VS Code) - a widely used IDE][vs-code], or any other IDE or code editor of your choice.
