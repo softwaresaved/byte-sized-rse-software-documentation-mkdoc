@@ -349,13 +349,23 @@ mkdocs gh-deploy --help
 Notice that the deploy command did not allow us to preview the site before it was pushed to GitHub.
 So, it is a good idea to build site and check it locally with the build/serve commands before deploying.
 
-TODO: configure GH Pages, and check the website on GitHub
+If you navigate to your software repository on GitHub, you may notice the new branch called `gh-pages` had been created by the `mkdocs gh-deploy` command and populated with the contents of your `site` folder.
+
+If you navigate to "Settings/Pages" portion of your software repository, you may notice that GitHub Pages has already been configured to serve a website from your `gh-pages` branch.
+You can visit the live site by following the URL that GitHub Pages creates for your repository.
+
+If it has not worked as described, on the "Settings/Pages" page under "Build and deployment" section you can configure the repository branch (should be `gh-pages`) that the GitHub Pages site is built from.
 
 ## Summary
 
+We have explored the static website generator tool MkDocs for generating documentation website for our software project.
+`mkdocs-material` plugin for MkDocs creates richer and more responsive websites, while `mkdocstrings` plugin creates reference manuals from docstrings in our code.
+
+Generated documentation pages can be shared with our software - they can reside in our software repository and be used by end users offline or we can use website hosting platforms such as GitHub to host documentation websites.
+
 ::: keypoints
 
-- Static site generators (such as MkDocs) can help use generate documentation websites.
-- GitHub Pages provide a free webpage hosting service for your documentation website
+- Static site generators (such as MkDocs) can help use generate documentation websites from Markdown files or docstrings.
+- GitHub Pages provide a free webpage hosting service for your documentation website.
 
 :::

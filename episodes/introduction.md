@@ -76,8 +76,8 @@ Software documentation can be produced at different levels and for different aud
 A useful way to think about documentation is to group it into three broad categories:
 
 - **Code-level documentation** – information embedded within the source code that explains how the code works.
-- **Software-level documentation** – documentation that explains how to install, use, configure and contribute to the code.
-- **Project-level documentation** – documentation that describes the wider software project, including its governance, maintenance, licensing, support and sustainability.
+- **Software-level documentation** – documentation that explains how to install, use, configure and edit the code.
+- **Project-level documentation** – documentation that describes the wider software project, including its governance, maintenance, licensing, contribution guidelines, support and sustainability.
 
 These categories complement one another and together provide the information needed to develop, use, maintain, and reuse software effectively. 
 In the following sections, we will explore each type in more detail.
@@ -250,10 +250,18 @@ Once `CITATION.cff` file has been added to a repository, GitHub's "Cite this rep
 Software documentation helps make research software understandable, reusable, maintainable, and citable. 
 Different forms of documentation serve different audiences. 
 Code-level documentation supports developers and maintainers, user documentation helps people learn and use software, and project-level documentation provides essential information about the software and its community. 
-Even small projects benefit from maintaining a README, LICENSE, and CITATION file, which together improve the discoverability, usability, and reusability of software.
+Even small projects benefit from maintaining a README, LICENSE, and CITATION file, which together improve the discoverability, usability and reusability of software.
 
 
 ::: keypoints
 
-TODO
+- Documentation allows users to run and understand software without having to work things out for themselves directly from the source code.
+- Different audiences (e.g. end users, developers, administrators) interact with our software in different ways and require different types of documentation.
+- Documentation can be provided at different levels 
+  - code-level documentation embedded within the source code to understand the implementation details,
+  - software-level documentation on how to install, use, configure and modify the code, 
+  - project-level documentation on how to contribute to, maintain and govern the software project.
+- A (good) README, CITATION and LICENSE files are the minimum project-level documentation elements required to make research code understandable and reusable (and research it supports reproducible).
+- Documentation frameworks such as Diátaxis provide content and style guidelines that can helps us write high quality documentation.
+
 :::
