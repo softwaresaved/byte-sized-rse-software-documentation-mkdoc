@@ -11,7 +11,8 @@ title: Setup
 - Python version 3.8 or above installed
 - Understanding of Python syntax to be able to read and follow code examples
 - Pip Python package installer
-- Visual Studio Code installed (ideally the latest version)
+- Venv Python package to handle virtual environments
+- Code editor such as Visual Studio Code
 
 :::
 
