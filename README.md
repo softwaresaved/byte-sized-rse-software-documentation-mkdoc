@@ -4,7 +4,7 @@ This is a Byte-Sized RSE lesson on creating software documentation with Mkdocs, 
 
 ### Questions
 
-- Why is documenting software important and what it its purpose?
+- Why is documenting software important and what is its purpose?
 - Who is the audience of our software's documentation?
 - What are the minimum elements of software documentation needed?
 - How can we use tools like MkDocs to create documentation websites for our software?
