@@ -296,7 +296,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Generating documentation with MkDocs</h1>
-        <p>Last updated on 2026-06-12 |
+        <p>Last updated on 2026-06-16 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-software-documentation-mkdocs/edit/main/episodes/generating-documentation-mkdocs.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -377,17 +377,18 @@ do:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="ex">python3</span> <span class="at">-m</span> pip install mkdocs</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="ex">python3</span> <span class="at">-m</span> pip install <span class="st">"mkdocstrings[python]"</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="ex">python3</span> <span class="at">-m</span> pip install mkdocs-material</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="ex">$</span> python3 <span class="at">-m</span> pip install mkdocs</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="ex">$</span> python3 <span class="at">-m</span> pip install <span class="st">"mkdocstrings[python]"</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="ex">$</span> python3 <span class="at">-m</span> pip install mkdocs-material</span></code></pre>
 </div>
+
 </section><section><h2 class="section-heading" id="generating-a-documentation-website">Generating a documentation website<a class="anchor" aria-label="anchor" href="#generating-a-documentation-website"></a></h2>
 <hr class="half-width"><p>Let’s create a new MkDocs site in the root of the spacewalks
 directory by running the <code>mkdocs new</code> command:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="ex">mkdocs</span> new .    </span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="ex">$</span> mkdocs new .    </span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -423,7 +424,7 @@ looks like now.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="ex">mkdocs</span> serve</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="ex">$</span> mkdocs serve</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -436,9 +437,10 @@ INFO    -  [13:59:18] Serving on http://127.0.0.1:8000/
 INFO    -  [13:59:32] Browser connected: http://127.0.0.1:8000/</code></pre>
 </div>
 <p>This command first builds the website from the files in
-<code>docs</code> folder and then serves it locally at <a href="http://127.0.0.1:8000" class="external-link">http://127.0.0.1:8000</a>. TIf you go to
+<code>docs</code> folder and then serves it locally at <a href="http://127.0.0.1:8000" class="external-link">http://127.0.0.1:8000</a>. If you go to
 that URL in your browser, you can see your basic “Material for MkDocs”
 website.</p>
+
 <p>The “built” version of our documentation site is located in the new
 <code>site</code> folder in the root of our project. This is where
 MkDocs tool saves the HTML files compiled from Markdown documentation
@@ -459,7 +461,7 @@ documentation webpages, you have to navigate directly to the
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a><span class="ex">mkdocs</span> build</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a><span class="ex">$</span> mkdocs build</span></code></pre>
 </div>
 <p>Let’s add more documentation elements to our site - for example a
 setup guide to help users install and run the software, how to guides
@@ -484,9 +486,9 @@ for common tasks and a reference manual for developers.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1" aria-label="code-block-9-1"></a><span class="fu">touch</span> docs/setup-guide.md</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1" aria-label="code-block-9-2"></a><span class="fu">touch</span> docs/how-to-guides.md</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1" aria-label="code-block-9-3"></a><span class="fu">touch</span> docs/reference.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1" aria-label="code-block-9-1"></a><span class="ex">$</span> touch docs/setup-guide.md</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1" aria-label="code-block-9-2"></a><span class="ex">$</span> touch docs/how-to-guides.md</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1" aria-label="code-block-9-3"></a><span class="ex">$</span> touch docs/reference.md</span></code></pre>
 </div>
 <p>We can add the following Markdown text to our “Setup guide”:</p>
 <pre class="text"><code>## Pre-requisites
@@ -507,19 +509,19 @@ Clone the Spacewalks repository to your local machine using Git.
 If you don't have Git installed, you can download it from the official Git website.
 
 `
-git clone https://github.com/your-repository-url/spacewalks.git
-cd spacewalks
+$ git clone https://github.com/your-repository-url/spacewalks.git
+$ cd spacewalks
 `
 
 Install the necessary dependencies:
 `
-python3 -m pip install -r requirements.txt
+$ python3 -m pip install -r requirements.txt
 `
 
 - To ensure everything is working correctly, run the tests using Pytest.
 
 `
-python3 -m pytest
+$ python3 -m pytest
 `
 
 ## Usage Example
@@ -528,7 +530,7 @@ To run an analysis using the `eva_data_analysis.py` script from the command line
 
 `
 # Usage Examples
-python3 eva_data_analysis.py data/eva-data.json results/eva-data.csv
+$ python3 eva_data_analysis.py data/eva-data.json results/eva-data.csv
 `
 
 The first argument is path to the JSON data file.
@@ -573,6 +575,7 @@ You can find the following documentation:
 - [Reference manual](./reference.html) - a full API reference</code></pre>
 <p>Let’s regenerate our documentation website and see what it looks like
 in a Web browser after these changes.</p>
+
 <div class="section level3">
 <h3 id="generating-a-reference-manual-from-dosctrings">Generating a reference manual from dosctrings<a class="anchor" aria-label="anchor" href="#generating-a-reference-manual-from-dosctrings"></a></h3>
 <p>Let’s now add support for <code>mkdocstrings</code> - this will allow
@@ -611,8 +614,9 @@ now.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a><span class="ex">mkdocs</span> build</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a><span class="ex">$</span> mkdocs build</span></code></pre>
 </div>
+
 </div>
 </section><section><h2 class="section-heading" id="hosting-documentation">Hosting documentation<a class="anchor" aria-label="anchor" href="#hosting-documentation"></a></h2>
 <hr class="half-width"><p>We saw how MkDocs documentation can be distributed with our
@@ -631,14 +635,14 @@ repository and push the changes to GitHub.</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1" aria-label="code-block-16-1"></a><span class="fu">git</span> add mkdocs.yml </span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1" aria-label="code-block-16-2"></a><span class="fu">git</span> add docs/</span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1" aria-label="code-block-16-3"></a><span class="fu">git</span> add site/</span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1" aria-label="code-block-16-4"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add project-level documentation"</span>   </span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1" aria-label="code-block-16-5"></a><span class="ex">python3</span> <span class="at">-m</span> pip freeze <span class="op">&gt;</span> requirements.txt</span>
-<span id="cb16-6"><a href="#cb16-6" tabindex="-1" aria-label="code-block-16-6"></a><span class="fu">git</span> add requirements.txt </span>
-<span id="cb16-7"><a href="#cb16-7" tabindex="-1" aria-label="code-block-16-7"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Added MkDocs tool and plugins"</span></span>
-<span id="cb16-8"><a href="#cb16-8" tabindex="-1" aria-label="code-block-16-8"></a><span class="fu">git</span> push origin main</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1" aria-label="code-block-16-1"></a><span class="ex">$</span> git add mkdocs.yml </span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1" aria-label="code-block-16-2"></a><span class="ex">$</span> git add docs/</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1" aria-label="code-block-16-3"></a><span class="ex">$</span> git add site/</span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1" aria-label="code-block-16-4"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add project-level documentation"</span>   </span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1" aria-label="code-block-16-5"></a><span class="ex">$</span> python3 <span class="at">-m</span> pip freeze <span class="op">&gt;</span> requirements.txt</span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1" aria-label="code-block-16-6"></a><span class="ex">$</span> git add requirements.txt </span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1" aria-label="code-block-16-7"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Added MkDocs tool and plugins"</span></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1" aria-label="code-block-16-8"></a><span class="ex">$</span> git push origin main</span></code></pre>
 </div>
 <div id="warning" class="callout caution">
 <div class="callout-square">
@@ -659,7 +663,7 @@ them in our documentation.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1" aria-label="code-block-17-1"></a><span class="fu">git</span> status</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1" aria-label="code-block-17-1"></a><span class="ex">$</span> git status</span>
 <span id="cb17-2"><a href="#cb17-2" tabindex="-1" aria-label="code-block-17-2"></a><span class="co"># Add any files you want to ignore to .gitignore</span></span>
 <span id="cb17-3"><a href="#cb17-3" tabindex="-1" aria-label="code-block-17-3"></a><span class="co"># Commit .gitignore</span></span></code></pre>
 </div>
@@ -668,7 +672,7 @@ command line to deploy your documentation to GitHub.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1" aria-label="code-block-18-1"></a><span class="ex">mkdocs</span> gh-deploy</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1" aria-label="code-block-18-1"></a><span class="ex">$</span> mkdocs gh-deploy</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -705,7 +709,7 @@ MkDocs.</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1" aria-label="code-block-20-1"></a><span class="ex">mkdocs</span> gh-deploy <span class="at">--help</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1" aria-label="code-block-20-1"></a><span class="ex">$</span> mkdocs gh-deploy <span class="at">--help</span></span></code></pre>
 </div>
 <p>Notice that the deploy command did not allow us to preview the site
 before it was pushed to GitHub. So, it is a good idea to build site and
@@ -723,6 +727,7 @@ repository.</p>
 “Build and deployment” section you can configure the repository branch
 (should be <code>gh-pages</code>) that the GitHub Pages site is built
 from.</p>
+
 </section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a></h2>
 <hr class="half-width"><p>We have explored the static website generator tool MkDocs for
 generating documentation website for our software project.
@@ -811,7 +816,7 @@ any links that you are not going to use.
   "url": "https://carpentries-incubator.github.io/byte-sized-rse-software-documentation-mkdocs/generating-documentation-mkdocs.html",
   "identifier": "https://carpentries-incubator.github.io/byte-sized-rse-software-documentation-mkdocs/generating-documentation-mkdocs.html",
   "dateCreated": "2026-04-21",
-  "dateModified": "2026-06-12",
+  "dateModified": "2026-06-16",
   "datePublished": "2026-06-16"
 }
 
