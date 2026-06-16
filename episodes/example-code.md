@@ -31,10 +31,19 @@ Open a command-line shell (e.g. via Git Bash in Windows, bash shell on Linux or 
 Use Git to clone your copy of the spacewalks repository.
 
 ```bash
-cd
-git clone https://github.com/your-repository/spacewalks.git
-cd spacewalks
+$ cd
+$ git clone https://github.com/your-repository/spacewalks.git
+$ cd spacewalks
 ```
+
+:::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
+### Checkpoint: Attendee progress
+
+Who has successfully created a copy of the spacewalks repository in their GitHub and cloned it locally?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ## Examining the Code
 
@@ -64,9 +73,9 @@ Let's run the code.
 First, we will create and activate a virtual environment called "venv" from the root of the software project directory:
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate # Mac or Linux
-source venv_spacewalks/Scripts/activate # Windows
+$ python3 -m venv venv
+$ source venv/bin/activate # Mac or Linux
+$ source venv_spacewalks/Scripts/activate # Windows
 (venv) $
 ```
 The active virtual environment is indicated in the command line prompt between the round brackets: "(venv)".
@@ -82,16 +91,24 @@ Note: some users may be able to just use the `python` command instead of `python
 To ensure the code is working correctly, run the tests using Pytest.
 
 ```
-python3 -m pytest
+$ python3 -m pytest
 ```
 
 To run the analysis using the `eva_data_analysis.py` script from the command line terminal, do:
 
 ```
-python3 eva_data_analysis.py data/eva-data.json results/eva-data.csv
+$ python3 eva_data_analysis.py data/eva-data.json results/eva-data.csv
 ```
 
 If the code runs successfully, you should get the resulting plot in `results/cumulative_eva_graph.png`.
+
+:::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
+### Checkpoint: Attendee progress
+
+Who has managed to run the tests, execute the code and get some results?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ::: challenge
