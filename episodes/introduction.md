@@ -54,21 +54,25 @@ When planning documentation, identify your primary audiences and ensure that eac
 
 ## Why does documenting software matter?
 
+Reproducibility is the cornerstone of science, and scientists who work in many disciplines are expected to document the processes by which they have conducted their research so it can be reproduced by others.
+In medicinal, pharmacological, and similar research fields for example, researchers use logbooks which are then used to write up protocols and methods for publication.
+For research that relies on software - the software itself is one way of documenting the research method.
+
 Software documentation is often seen as a time-consuming task with few immediate rewards and is therefore frequently neglected in research projects. 
 However, documentation is an essential part of software development and research practice. 
-Good documentation not only helps others understand and use software, but also improves the quality, sustainability and reproducibility of the research it supports.
+Good documentation not only helps others understand and use software (i.e. supports **reusability**), but also improves the **quality and sustainability** of the software and **reproducibility** of the research it supports.
 
 Good software documentation:
 
 - captures important methodological details that can be referenced when publishing research findings or preparing reports and papers.
 - helps you revisit a project more easily after weeks, months, or even years away from it.
-- makes software easier to understand, reuse and build upon, increasing its visibility, adoption, and potential impact.
+- makes software easier to understand, reuse, modify and build upon (to do something else), increasing its visibility, adoption and potential impact.
 - supports reproducible research by providing clear information about how the software works and how it should be used.
 - facilitates collaboration by helping new team members quickly understand the project and become productive.
 - reduces support requests and saves time by answering common questions and providing guidance for users.
 - improves software sustainability by making it easier to maintain, update, and transfer knowledge between project members.
 
-In short, documentation is an investment that benefits both current and future users, contributors and maintainers of a software project.
+In short, documentation is an investment that benefits both current and future users of a software project.
 
 ## Types of software documentation
 
