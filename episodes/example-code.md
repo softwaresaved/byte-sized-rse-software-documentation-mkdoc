@@ -6,7 +6,7 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- What is a minimum documentation needed for people to be able to reuse some else's code?
+- What is the minimum documentation needed for people to be able to reuse someone else's code?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -24,7 +24,7 @@ The spacewalks code is available from:
 
 ## Obtaining Example Code
 
-Create your own copy of the spacewalks repository above using `Use this template` button on GitHub.
+Create your own copy of the spacewalks repository above using the `Use this template` button on GitHub.
 
 Open a command-line shell (e.g. via Git Bash in Windows, bash shell on Linux or Terminal on a Mac) and navigate to where you would like the example code to reside (e.g. to your home directory).
 
@@ -32,9 +32,11 @@ Use Git to clone your copy of the spacewalks repository.
 
 ```bash
 $ cd
-$ git clone https://github.com/your-repository/spacewalks.git
+$ git clone https://github.com/your-github-username/spacewalks.git
 $ cd spacewalks
 ```
+
+Don't forget replace to `your-github-username` with your own username.
 
 :::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
@@ -47,19 +49,19 @@ Who has successfully created a copy of the spacewalks repository in their GitHub
 
 ## Examining the Code
 
-Let's take a look at the spacewalk analysis code, which is in the file called `eva_data_analysis.py`.
-Feel free to use your preferred editor of choice, such as Notepad, Nano or Visual Studio Code.
+Let's take a look at the spacewalks analysis code, which is in the file called `eva_data_analysis.py`.
+Feel free to use your preferred editor, such as Notepad, Nano or Visual Studio Code.
 
 The code is designed to:
 
 - Read in the data from the JSON file
-- Change the data from one data format to another and saves to a file in the new format (CSV)
+- Change the data from one data format to another and save to a file in the new format (CSV)
 - Perform some calculations to generate summary statistics about the data
 - Make a plot to visualise the data
 
 A few things to note about the software project:
 
-- `eva_data_analysis.py` Python script already contains comprehensive docstrings comments
+- `eva_data_analysis.py` Python script already contains comprehensive docstrings
 - `requirements.txt` file in the project root lists the software dependencies - such as Pandas, Pytest, Matplotlib
 - `data` folder contains input data
 - `results` folder contains cleaned dataset converted to CSV format and the resulting plot
@@ -75,7 +77,7 @@ First, we will create and activate a virtual environment called "venv" from the 
 ```bash
 $ python3 -m venv venv
 $ source venv/bin/activate # Mac or Linux
-$ source venv_spacewalks/Scripts/activate # Windows
+$ source venv/Scripts/activate # Windows
 (venv) $
 ```
 The active virtual environment is indicated in the command line prompt between the round brackets: "(venv)".
@@ -134,7 +136,7 @@ With the code provided as is (e.g. someone sent you the code via email or on a m
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Minimum information needed to be able to run someone else code should include the reuse licence, description and purpose of the code, installation and setup instructions (including dependencies), and usage example (how to run the code).
+- Minimum information needed to be able to run someone else's code should include the reuse licence, description and purpose of the code, installation and setup instructions (including dependencies), and usage example (how to run the code).
 - Additional information may include more detailed installation guides, API documentation or design documents, list of authors and how to cite the code (this list is not exhaustive).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

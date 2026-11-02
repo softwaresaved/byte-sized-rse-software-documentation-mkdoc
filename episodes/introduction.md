@@ -127,12 +127,10 @@ A useful framework for organising software documentation is [Diátaxis][diataxis
 Diátaxis identifies four complementary types of documentation:
 
 - **Tutorials** - lessons that guide learners through a series of exercises to build proficiency using the code. Target audience: new users and learners who are unfamiliar with the software.
-- **How-to guides** - step by step instructions on how to accomplish specific goals using the software. Target audience: existing users who want to complete a particular task.
+- **How-to guides** - step-by-step instructions on how to accomplish specific goals using the software. Target audience: existing users who want to complete a particular task.
 - **Reference documentation** - lookup material that helps users find precise information about the software, such as functions, commands, parameters, APIs, and configuration options. 
 Reference documentation can often be generated automatically from code-level docstrings. Target audience: developers, advanced users, and maintainers who need accurate technical details.
-- **Explanations** - conceptual discussions that help users understand implementation decisions, design choices, and underlying principles. 
-
-- Target audience: developers, maintainers, contributors and system administrators who need to understand the reasoning behind the software.
+- **Explanations** - conceptual discussions that help users understand implementation decisions, design choices, and underlying principles. Target audience: developers, maintainers, contributors and system administrators who need to understand the reasoning behind the software.
 
 Other documentation frameworks and communities, such as [Write the Docs][write-the-docs] and [The Good Docs Project][the-good-docs-project], provide a wealth of resources to help teams create high-quality documentation.
 
@@ -165,7 +163,7 @@ Many of these files can be considered *social documentation* because they descri
 ::: callout
 ## Just enough documentation
 
-For many small projects the following three pieces of project-level documentation may be sufficient: README, LICENSE and CITATION.
+For many small projects the following three pieces of project-level documentation may be sufficient: README.md, LICENSE.md and CITATION.md.
 :::
 
 Let’s look at each of these files in turn.
@@ -203,7 +201,7 @@ The standard way to declare licensing terms is to include a file called `LICENSE
 
 Useful resources include:
 
-- [The open source guide][opensource-licence-guide] on applying, changing and managing licenses.
+- [The open source guide][opensource-licence-guide] on applying, changing and managing licences.
 - [choosealicense.com][choosealicense] online tool which helps developers select an appropriate licence and generate a LICENSE file.
 
 ### CITATION file
@@ -247,7 +245,7 @@ Additional metadata can include abstracts, repository URLs, version information,
 
 A CFF file can be created or updated using the online application [`cffinit`][cffinit-webapp].
 
-Once `CITATION.cff` file has been added to a repository, GitHub's "Cite this repository" feature can generate citations in a variety of formats, including APA and BibTeX.
+Once a `CITATION.cff` file has been added to a repository, GitHub's "Cite this repository" feature can generate citations in a variety of formats, including APA and BibTeX.
 
 ## Summary
 
@@ -265,7 +263,7 @@ Even small projects benefit from maintaining a README, LICENSE, and CITATION fil
   - code-level documentation embedded within the source code to understand the implementation details,
   - software-level documentation on how to install, use, configure and modify the code, 
   - project-level documentation on how to contribute to, maintain and govern the software project.
-- A (good) README, CITATION and LICENSE files are the minimum project-level documentation elements required to make research code understandable and reusable (and research it supports reproducible).
-- Documentation frameworks such as Diátaxis provide content and style guidelines that can helps us write high quality documentation.
+- A (good) README, a CITATION file, and a LICENSE file are the minimum project-level documentation elements required to make research code understandable and reusable (and the research it supports reproducible).
+- Documentation frameworks such as Diátaxis provide content and style guidelines that can help us write high-quality documentation.
 
 :::

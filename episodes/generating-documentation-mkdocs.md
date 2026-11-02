@@ -30,14 +30,14 @@ There are additional plugins that build on top of MkDocs that provide additional
 
 ### mkdocs-material plugin for MkDocs
 
-"Material for MkDocs" (`mkdocs-material`) is a theme plugin for MkDocs that creates documentations site using a modern, responsive design.
+"Material for MkDocs" (`mkdocs-material`) is a theme plugin for MkDocs that creates a documentation site using a modern, responsive design.
 In addition to changing the look of the website, "Material for MkDocs" also enhances the functionality of websites with features like blog posts, social cards, advanced search capabilities, etc.
 MkDocs provides the core functionality of building a static site, while "Material for MkDocs" elevates the visual and interactive experience of your documentation.
 
 ### mkdocstrings plugin for MkDocs
 
 If you also want to automatically generate documentation from your code's docstrings, you will need the `mkdocstrings` plugin.
-This plugin can be used with MkDocs to create documentation for software projects written in a number of programming language - as long as there is a `mkdocstrings` "handler" for it.
+This plugin can be used with MkDocs to create documentation for software projects written in a number of programming languages - as long as there is a `mkdocstrings` "handler" for it.
 Currently, there are `mkdocstrings` handlers for the C, Crystal, GitHub Actions, Python, MATLAB, TypeScript, and VBA languages, as well as for shell scripts.
 Without this plugin, core MkDocs tool only "understands" Markdown files.
 
@@ -90,7 +90,7 @@ theme:
   font: false
 ```
 
-Note `font: false` variable is for GDPR compliance; `use_directory_url: false` variable tells MKDocs tools how to handle URLs for documentation that is served as a website (we will cover this in a moment).
+Note `font: false` variable is for GDPR compliance; `use_directory_urls: false` variable tells MkDocs tools how to handle URLs for documentation that is served as a website (we will cover this in a moment).
 
 We can run the `mkdocs serve` command to see what website looks like now.
 
@@ -99,6 +99,15 @@ $ mkdocs serve
 ```
 
 ```output
+ │  Material for MkDocs reaches end of life on May 5, 2027.
+ │  Critical fixes and security updates continue until that date.
+ │
+ │  Zensical is its maintained successor, built by the same team.
+ │  Try it alongside MkDocs with your existing mkdocs.yml:
+ │  https://zensical.org/docs/compatibility/mkdocs/migration/
+
+  To disable this warning, set NO_MKDOCS_2_WARNING=1.
+
 INFO    -  Building documentation...
 INFO    -  Cleaning site directory
 INFO    -  Documentation built in 0.24 seconds
@@ -110,32 +119,46 @@ INFO    -  [13:59:32] Browser connected: http://127.0.0.1:8000/
 This command first builds the website from the files in `docs` folder and then serves it locally at [http://127.0.0.1:8000](http://127.0.0.1:8000).
 If you go to that URL in your browser, you can see your basic "Material for MkDocs" website.
 
-:::::::::::::::::::::::::::::::::::::::::::::::: instructor
-
-### Checkpoint: Attendee progress
-
-Who has managed to build and server the website?
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-The "built" version of our documentation site is located in the new `site` folder in the root of our project.
-This is where MkDocs tool saves the HTML files compiled from Markdown documentation files. 
-This directory serves as your documentation website and can be distributed together with your code.
-Users of your code can then read these pages locally using a Web browser. 
-Alternatively, you can host them as a website that users can navigate to.
-
-Note that we used the setting `use_directory_urls: false` in the `mkdocs.yml` file.
-This setting ensures that the documentation site is generated with URLs that are easy to navigate locally on a user's device.
-
-An alternative to using the `mkdocs serve` command is the `mkdocs build` command - it will only build the webpages in `site` folder but not serve them as a website at [http://127.0.0.1:8000](http://127.0.0.1:8000).
-You will need to re-run this command each time you make a change.
-To see your documentation webpages, you have to navigate directly to the `site` folder and open files in a Web browser.
+An alternative to using the `mkdocs serve` command is the `mkdocs build` command - it will only build the webpages in `site` folder but not serve them as a website at [http://127.0.0.1:8000](http://127.0.0.1:8000).  
 
 ```bash
 $ mkdocs build
 ````
 
-Let's add more documentation elements to our site - for example a setup guide to help users install and run the software, how to guides for common tasks and a reference manual for developers.
+```output
+ │  Material for MkDocs reaches end of life on May 5, 2027.
+ │  Critical fixes and security updates continue until that date.
+ │
+ │  Zensical is its maintained successor, built by the same team.
+ │  Try it alongside MkDocs with your existing mkdocs.yml:
+ │  https://zensical.org/docs/compatibility/mkdocs/migration/
+  To disable this warning, set NO_MKDOCS_2_WARNING=1.
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /Users/AnnResearcher/spacewalks/site
+INFO    -  Documentation built in 0.16 seconds
+```
+
+The "built" version of our documentation site is located in the new `site` folder in the root of our project.
+This is where MkDocs tool saves the HTML files compiled from Markdown documentation files. 
+
+This directory serves as your documentation website and can be distributed together with your code.
+Users of your code can then read these pages locally using a Web browser. 
+Alternatively, you can host them as a website that users can navigate to.
+
+Note that we used the setting `use_directory_urls: false` in the `mkdocs.yml` file. This setting ensures that the documentation site is generated with URLs that are easy to navigate locally on a user's device.
+
+You will need to re-run the `mkdocs build` command each time you make a change.
+To see your documentation webpages, you have to navigate directly to the `site` folder and open files in a Web browser.
+
+:::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
+### Checkpoint: Attendee progress
+
+Who has managed to build and serve the website?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+Let's add more documentation elements to our site - for example a setup guide to help users install and run the software, how-to guides for common tasks and a reference manual for developers.
 
 ```yaml
 site_name: Spacewalks Documentation
@@ -146,7 +169,7 @@ theme:
 nav:
   - Home: index.md
   - Setup Guide: setup-guide.md
-  - How-To Guides: how-to-guides.md
+  - How-to Guides: how-to-guides.md
   - Reference: reference.md
 ```
 Let's create Markdown files `setup-guide.md`, `how-to-guides.md` and `reference.md` in `docs/` folder to match our configuration.
@@ -164,10 +187,10 @@ We can add the following Markdown text to our "Setup guide":
 
 Spacewalks was developed using Python version 3.12.
 
-To install and run Spacewalks you will need have Python3 installed.
+To install and run Spacewalks you will need to have Python 3 installed.
 You will also need the following libraries (minimum versions in brackets):
 
-- [NumPy](https://www.numpy.org/) >=2.0.0 - Spacewalk's test suite uses NumPy's statistical functions
+- [NumPy](https://www.numpy.org/) >=2.0.0 - The Spacewalks test suite uses NumPy's statistical functions
 - [Matplotlib](https://matplotlib.org/stable/index.html) >=3.0.0  - Spacewalks uses Matplotlib to make plots
 - [pytest](https://docs.pytest.org/en/8.2.x/#) >=8.2.0  - Spacewalks uses Pytest for testing
 - [pandas](https://pandas.pydata.org/) >= 2.2.0 - Spacewalks uses Pandas for data frame manipulation
@@ -202,27 +225,27 @@ To run an analysis using the `eva_data_analysis.py` script from the command line
 $ python3 eva_data_analysis.py data/eva-data.json results/eva-data.csv
 `
 
-The first argument is path to the JSON data file.
-The second argument is the path the CSV output file.
+The first argument is the path to the JSON data file.
+The second argument is the path to the CSV output file.
 
 If the code runs successfully, you should get the resulting plot in `results/cumulative_eva_graph.png`
 ```
 
-Next, we can add the following Markdown text to our "How to guides":
+Next, we can add the following Markdown text to our "How-to guides":
 
 ```text
-## How to change the file path of Spacewalk's output dataset
+## How to change the file path of the Spacewalks output dataset
 
-This guide shows you how to set the file path for Spacewalk's output data set to a location of your choice.
+This guide shows you how to set the file path for the Spacewalks output dataset to a location of your choice.
 
-By default, the cleaned data set in CSV format generated by the Spacewalk software is saved to the `results/` folder within the working directory with file name `eva-data.csv`.
+By default, the cleaned dataset in CSV format generated by the Spacewalks software is saved to the `results/` folder within the working directory with file name `eva-data.csv`.
 
 If you would like to modify the name or location of the output dataset, set the second command line argument to your chosen file path. 
-For example, if you want to save the output data set to the subfolder `data/clean/` you can invoke the script as:
+For example, if you want to save the output dataset to the subfolder `data/clean/` you can invoke the script as:
 
-`python3 eva_data_analysis.py eva-data.json data/clean/eva-data-clean.csv`
+`python3 eva_data_analysis.py data/eva-data.json data/clean/eva-data-clean.csv`
 
-The specified destination folder `data/clean/` must exist before running spacewalks analysis script.
+The specified destination folder `data/clean/` must exist before running the Spacewalks analysis script.
 ```
 
 Finally, let's replace the default Markdown content of the homepage of our site in `index.md` (which was generated by MkDocs) to include some introduction to our software and point to other documentation parts:
@@ -244,7 +267,7 @@ Key features of Spacewalks:
 You can find the following documentation:
 
 - [Setup guide](./setup-guide.html) to help you install the software and learn how to run it
-- [How to guides](./how-to-guides.html) to help you perform common tasks
+- [How-to guides](./how-to-guides.html) to help you perform common tasks
 - [Reference manual](./reference.html) - a full API reference
 ```
 
@@ -254,11 +277,11 @@ Let's regenerate our documentation website and see what it looks like in a Web b
 
 ### Checkpoint: Attendee progress
 
-Who has managed to add the Setup and Howto guides and rebuild the website?
+Who has managed to add the Setup and How-to guides and rebuild the website?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Generating a reference manual from dosctrings 
+### Generating a reference manual from docstrings 
 
 Let's now add support for `mkdocstrings` - this will allow us to automatically add docstrings from our code into our documentation using a simple tag.
 
@@ -271,7 +294,7 @@ theme:
 nav:
   - Home: index.md
   - Setup Guide: setup-guide.md
-  - How-To Guides: how-to-guides.md
+  - How-to Guides: how-to-guides.md
   - Reference: reference.md
 
 plugins:
@@ -288,7 +311,7 @@ It is provided as a reference manual.
 
 ```
 
-Let's regenerate our documentation website and see what it looks line now.
+Let's regenerate our documentation website and see what it looks like now.
 
 ```bash
 $ mkdocs build
@@ -309,8 +332,7 @@ We can also make our documentation available as a live website by deploying our 
 
 As our repository is hosted in GitHub, we can use GitHub Pages - a free service built into GitHub that allows GitHub users to host websites directly from their GitHub repositories.
 
-GitHub Pages deploys and serves site files from a branch - by default this is the `gh-pages` branch. 
-GitHub Pages can also be configured to serve webpages from any other branch within the project repository. 
+By default, GitHub Pages builds and deploys a site with a GitHub Actions workflow.  GitHub Pages can also be configured to publish a site from a branch in the repository. Conventionally, the branch used for an already built site is named `gh-pages`. We will use this approach as it does not require prior experience of GitHub Actions.
 
 Let us commit our documentation to the main branch of our Git repository and push the changes to GitHub.
 
@@ -347,26 +369,22 @@ $ mkdocs gh-deploy
 
 ```output
 INFO    -  Cleaning site directory
-INFO    -  Building documentation to directory: /Users/AnnResearch/spacewalks/site
-WARNING -  griffe: eva_data_analysis.py:105: No type or annotation for returned value 'int'
-WARNING -  griffe: eva_data_analysis.py:84: No type or annotation for returned value 1
-WARNING -  griffe: eva_data_analysis.py:33: No type or annotation for returned value 1
-INFO    -  Documentation built in 0.37 seconds
+INFO    -  Building documentation to directory: /Users/AnnResearcher/spacewalks/site
+INFO    -  Documentation built in 0.69 seconds
 WARNING -  Version check skipped: No version specified in previous deployment.
-INFO    -  Copying '/Users/AnnResearcher/spacewalks/site' to 'gh-pages' branch and pushing to
-           GitHub.
-Enumerating objects: 63, done.
-Counting objects: 100% (63/63), done.
-Delta compression using up to 11 threads
-Compressing objects: 100% (60/60), done.
-Writing objects: 100% (63/63), 578.91 KiB | 7.93 MiB/s, done.
-Total 63 (delta 7), reused 0 (delta 0), pack-reused 0
+INFO    -  Copying '/Users/AnnResearcher/spacewalks/site' to 'gh-pages' branch and pushing to GitHub.
+Enumerating objects: 62, done.
+Counting objects: 100% (62/62), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (58/58), done.
+Writing objects: 100% (62/62), 576.83 KiB | 6.95 MiB/s, done.
+Total 62 (delta 7), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (7/7), done.
 remote: 
 remote: Create a pull request for 'gh-pages' on GitHub by visiting:
 remote:      https://github.com/kkh451/spacewalks/pull/new/gh-pages
 remote: 
-To https://github.com/kkh451/spacewalks-dev.git
+To https://github.com/kkh451/spacewalks.git
  * [new branch]      gh-pages -> gh-pages
 INFO    -  Your documentation should shortly be available at: https://kkh451.github.io/spacewalks/
 ```
@@ -406,7 +424,7 @@ Generated documentation pages can be shared with our software - they can reside 
 
 ::: keypoints
 
-- Static site generators (such as MkDocs) can help use generate documentation websites from Markdown files or docstrings.
+- Static site generators (such as MkDocs) can help us generate documentation websites from Markdown files or docstrings.
 - GitHub Pages provide a free webpage hosting service for your documentation website.
 
 :::
