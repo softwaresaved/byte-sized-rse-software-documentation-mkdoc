@@ -21,7 +21,7 @@ At the end of this lesson, learners should be able to:
 
 ### Slides
 
-N/A.
+- [Slides from RSC8, October 2026](https://docs.google.com/presentation/d/1iX-ZdrpV2zGuTWv8KiW5_k4_8kcI3eXMJZDssfYkaOI/edit?usp=sharing)
 
 ### Recordings
 
